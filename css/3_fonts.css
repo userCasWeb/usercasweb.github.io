@@ -94,7 +94,7 @@ h5,
   margin-right: auto;
 }
 
-em {
+strong {
   font-weight: bold;
   color: var(--color-base);
 }
