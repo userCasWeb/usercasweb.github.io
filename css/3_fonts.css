@@ -93,3 +93,8 @@ h5,
   margin-left: auto;
   margin-right: auto;
 }
+
+em {
+  font-weight: bold;
+  color: var(--color-base);
+}
