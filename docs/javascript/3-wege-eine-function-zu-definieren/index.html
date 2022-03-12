@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebAppDev</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+  </head>
+  <body class="container">
+    <header>
+      <a class="s-logo" href="/">WebAppDev</a>
+      <nav class="navi">
+        <a class="menu-btn" href="/javascript"><span>01</span>Javascript</a>
+        <a class="menu-btn" href="/html"><span>02</span>Html</a>
+        <a class="menu-btn" href="/css"><span>03</span>Css</a>
+      </nav>
+    </header>  <h1 class="center padding-top-4">3 Wege eine Function zu definieren</h1>
+  <p class="center excerpt"><span>7.3.2020 @ javascript</span></p>
+  <main class="padding-col-0-14 padding-top-2">
+  <p>Um eine Function zu definieren gibt es in Javascript 3 grundsätzliche verschiedene Möglichkeiten. Je nach Situation und Preferenz eignet sich die eine Art besser oder schlechter. </p>
+<h3 id="function-declaration">Function Declaration</h3>
+<p>Die erste Möglichkeit besteht darin, mit dem Keyword &quot;function&quot; die Function zu deklarieren. So als würde man eine Variable mit dem Keyword &quot;var&quot; deklarieren. Dabei geben wir der Function einen Namen. Im Beispiel unten ist es &quot;square&quot;. </p>
+<pre><code class="hljs js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">square</span>(<span class="hljs-params">x</span>) </span>{
+  <span class="hljs-keyword">return</span> x * x;
+}</code></pre>
+
+<h3 id="function-expression">Function Expression</h3>
+<p>Als zweitens kann die Function als Expression definieren werden. Dabei wird einer Variablen gleich die Function angehängt oder bestimmt. Wir geben aber der Function keinen Namen. Sonder speichern diese in einer Variablen, in diesem Fall auch &quot;square&quot;.</p>
+<pre><code class="hljs js"><span class="hljs-keyword">const</span> square = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">x</span>) </span>{
+  <span class="hljs-keyword">return</span> x * x;
+}</code></pre>
+
+<h3 id="arrow-function-expression">Arrow Function Expression</h3>
+<p>Neu kann eine Function auch mit einem &quot;=&gt;&quot; (gleich grösser Zeichen) definiert werden. Dieses Zeichen nennt man auch Fat Arrow. Manchmal wird diese Function auch Fat Arrow Function genannt. Es ist das gleiche Prinzip wie bei der Function Expression nur, dass das Keyword &quot;function&quot; weggelassen werden kann und die Paratemer vor der Fat Arrow geschrieben wird. </p>
+<pre><code class="hljs js"><span class="hljs-keyword">const</span> square = <span class="hljs-function">(<span class="hljs-params">x</span>) =&gt;</span> (
+  <span class="hljs-keyword">return</span> x * x;
+)</code></pre>
+  </main>
+    <script>
+        const list = document.getElementsByClassName('menu-btn');
+        const domain = window.location.protocol + '//' + window.location.host;
+        const adress = window.location.href.replace(domain,'');
+        let current = 0;
+        for (let i = 0; i < list.length; i++) {
+            if (adress.search(list[i].getAttribute('href')) === 0) {
+                current = i;
+                list[current].className = 'menu-btn active';    
+            };
+        };
+    </script>
+    </body>
+</html>	

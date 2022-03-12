@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebAppDev</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+  </head>
+  <body class="container">
+    <header>
+      <a class="s-logo" href="/">WebAppDev</a>
+      <nav class="navi">
+        <a class="menu-btn" href="/javascript"><span>01</span>Javascript</a>
+        <a class="menu-btn" href="/html"><span>02</span>Html</a>
+        <a class="menu-btn" href="/css"><span>03</span>Css</a>
+      </nav>
+    </header>  <h1 class="center padding-top-4">Der Aufbau einer Function erklärt und visualisiert.</h1>
+  <p class="center excerpt"><span>6.3.2020 @ javascript</span></p>
+  <main class="padding-col-0-14 padding-top-2">
+  <p>Als Neuling in der Programmierung wird man von Anfang an mit unglauhblichen Ausdrücken beworfen. Man versteht am Anfang gar nichts. In diesem Post nehme ich die Function mal auseinander und versuche Begrifflichkeiten die wir immer wieder antreffen werden zu beschreiben und in einen Kontext zu setzten. Dazu habe ich mal ein Beispiel erstellt, welches das Trinkgeld berechnen soll.</p>
+<pre><code class="hljs js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">calcTip</span>(<span class="hljs-params">meal, tip</span>) </span>{
+  <span class="hljs-keyword">const</span> total = meal * (<span class="hljs-number">100</span> + tip) / <span class="hljs-number">100</span>;
+  <span class="hljs-keyword">return</span> total; 
+}
+
+<span class="hljs-keyword">const</span> myTip = calcTip(<span class="hljs-number">75</span>, <span class="hljs-number">10</span>);</code></pre>
+
+<p>Das Wort functions ist das <em>keyword</em>. Danach folgt calcTip welches den <em>function name</em> definiert. In Klammern geschrieben sind die <em>parameters</em>, wenn es mehrere sind wie im Beispiel mit einem Komma getrennt. Danach folgt die öffnende geschweifte Klammer, welche den <em>scope startet</em> oder öffnet. Die folgenden 2 Zeilen sind sogenante <em>statements</em>. Wobei das letzte statement die <em>return statement</em> ist. Am Schluss der Function Declaration ist die schliessende geschweifte Klammer, welchen den <em>scope schliesst</em>. Beide statements sind im <em>function body</em> drin. </p>
+<p>Nach der Function Declaration folgt ein weites statemant. Zuerst das Wort const mit einem zugewiesenen Pointer mytip. Dies ist eine Variable die dazu gebraucht wird den zurückgegebenen Wert einzufangen. Nach dem Gleichheitszeichen wird die Function aufgerufen. Diese referenziert die oben definierte Function mit dem Namen calcTip. In Klammern folgen dann die zwei <em>arguments</em> welche in der Funktion <em>parameter</em> genannt werden. Der Aufruf nach dem Gleichheitszeichen nennt man auch <em>function call</em>. Manchmal spricht man auch von <em>invoke a function</em> wenn die Function aufgerufen werden soll. </p>
+<p>Merke: Mit der Definition einer Function wird die Function nicht ausgeführt. Erst mit dem Aufruf der Function und übergabe der Argumente, falls vorhanden.  </p>
+
+  </main>
+    <script>
+        const list = document.getElementsByClassName('menu-btn');
+        const domain = window.location.protocol + '//' + window.location.host;
+        const adress = window.location.href.replace(domain,'');
+        let current = 0;
+        for (let i = 0; i < list.length; i++) {
+            if (adress.search(list[i].getAttribute('href')) === 0) {
+                current = i;
+                list[current].className = 'menu-btn active';    
+            };
+        };
+    </script>
+    </body>
+</html>	
