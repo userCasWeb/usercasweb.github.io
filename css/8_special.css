@@ -1,0 +1,73 @@
+/*** special.css ***/
+
+.s-logo {
+  font-family: var(--font-serif);
+  align-self: flex-start;
+}
+
+.pad-0 {
+  padding-bottom: 0rem;
+  margin-bottom: 1rem;
+  color: var(--color-base);
+  font-weight: bold;
+}
+
+.front {
+  max-width: 19ch;
+}
+.titel {
+  color: var(--color-base);
+}
+.excerpt {
+  max-width: 43ch;
+  color: var(--color-acsent);
+}
+
+header {
+  --min: 0.75;
+  --max: 3.25;
+  padding-top: var(--clamp);
+  padding-bottom: var(--clamp);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav a {
+  --min: 0.875; /* 14 */
+  --max: 1.125; /* 18 */
+  font-size: var(--clamp);
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
+
+nav a:nth-last-child(1),
+nav a:nth-last-child(1):hover {
+  margin-right: 0rem;
+}
+
+nav a span {
+  font-weight: bold;
+  margin-right: 0.5rem;
+  color: var(--color-base);
+}
+
+nav div {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+nav a {
+  border-bottom: none;
+}
+
+nav a:active,
+nav a:hover,
+.active {
+  margin-right: 1rem;
+  margin-left: 1rem;
+  border-bottom: solid 0.5rem var(--color-base);
+  transition: border .2s linear;
+}

@@ -1,0 +1,14 @@
+    <script>
+        const list = document.getElementsByClassName('menu-btn');
+        const domain = window.location.protocol + '//' + window.location.host;
+        const adress = window.location.href.replace(domain,'');
+        let current = 0;
+        for (let i = 0; i < list.length; i++) {
+            if (adress.search(list[i].getAttribute('href')) === 0) {
+                current = i;
+                list[current].className = 'menu-btn active';    
+            };
+        };
+    </script>
+    </body>
+</html>	

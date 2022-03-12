@@ -1,0 +1,36 @@
+/*** variables.css ***/
+
+:root {
+  /* fonts */
+  --font-sans-serif: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+  --font-serif: 'DM Serif Display', serif;
+  --font-mono: monospace;
+  --font-light: 300;
+  --font-normal: 400;
+  --font-bold: 600;
+  --font-heavy: 700;
+
+  /* Colors */
+  --color-background: #010b14;
+  --color-text: #edf7ff;
+  --color-base: #86B3D1;
+  --color-acsent: #A16E83;
+  --color-success: #80b912;
+  --color-error: #f05230;
+  --color-border: #ddd;
+
+  /* unitless viewport widths in rem -> Breakpoints*/
+  --min-vw: 20; /* 320:16 */
+  --max-vw: 75; /* 1200:16 */
+  --range-vw: calc(var(--max-vw) - var(--min-vw));
+  --diff-vw: calc(100vw - (var(--min-vw) * 1rem));
+
+  /* unitless line height variables in rem */
+  --lh-base: 1.6;
+  --lh-h: 1.05;
+}
+
+/* clamp calculation */
+* {
+  --clamp: clamp(1rem * var(--min), (var(--min) * 1rem) + (var(--max) - var(--min)) * (100vw - (var(--min-vw) * 1rem)) / (var(--max-vw) - var(--min-vw)), 1rem * var(--max));
+}

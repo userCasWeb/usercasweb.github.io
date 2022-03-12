@@ -1,0 +1,54 @@
+/*** layout.css ***/
+
+/* centering the most outer container */
+
+.container {
+  --min: 1;
+  --max: 1.5;
+  padding: 0 var(--clamp);
+  max-width: calc(var(--max-vw) * 1rem);
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.padding-top-2 {
+  padding-top: calc(var(--lh-base) * 2rem);
+}
+
+.padding-top-4 {
+  padding-top: calc(var(--lh-base) * 4rem);
+}
+
+.padding-bottom-2 {
+  padding-bottom: calc(var(--lh-base) * 2rem);
+}
+
+.padding-bottom-4 {
+  padding-bottom: calc(var(--lh-base) * 4rem);
+}
+.padding-col-0-14 {
+  --min: 0;
+  --max: 14;
+  padding-left: var(--clamp);
+  padding-right: var(--clamp);
+}
+
+/* Grid */
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(21ch, 1fr));
+  column-gap: 1rem;
+}
+
+/* Flex */
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: stretch;
+  gap: calc(var(--lh-base) * 1rem);
+}

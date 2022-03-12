@@ -1,0 +1,26 @@
+/*** code.css ***/
+
+pre code {
+  display: block;
+  white-space: pre;
+  -webkit-overflow-scrolling: touch;
+  overflow-x: scroll;
+  max-width: 100%;
+  min-width: 100px;
+  border-radius: 1rem;
+}
+
+pre {
+  margin-bottom: calc(var(--lh-base) * 1em);
+  border-radius: 1.5rem;
+}
+
+code.hljs {
+  --min: 0.75; /* 12 */
+  --max: 1.125; /* 18 */
+  font-size: var(--clamp);
+  font-family: var(--font-mono);
+  line-height: var(--lh-base);
+  padding: calc(var(--lh-base) * 1.5rem);
+}
+

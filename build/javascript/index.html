@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebAppDev</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+  </head>
+  <body class="container">
+    <header>
+      <a class="s-logo" href="/">WebAppDev</a>
+      <nav class="navi">
+        <a class="menu-btn" href="/javascript"><span>01</span>Javascript</a>
+        <a class="menu-btn" href="/Html"><span>02</span>Html</a>
+        <a class="menu-btn" href="/CSS"><span>03</span>Css</a>
+      </nav>
+    </header>  <h1 class="padding-top-4 front">Javascript learnings, the good way</h1>
+  <p class="h5 excerpt">Javascript ist eine Programmiersprache, mit der die Interaktion von Nutzer auf Websites ausgewertet und Inhalte verändert werden können.</p>
+  <main class="">
+    
+      <ul class="grid-2">
+        <li>
+          <h5 class="h5 titel"><a href="/javascript/my-first-static-site-that-shows-nothing-more-than-that">My first static site that shows nothing more than that</a></h5>
+          <span class="center excerpt">7.12.2012 @ javascript</span>
+          <p>Was bedeutet eigentlich Scope in Javascript? Dies ist ein Excerpt.</p>
+        </li>
+      </ul>
+  </main>
+    <script>
+        const list = document.getElementsByClassName('menu-btn');
+        const domain = window.location.protocol + '//' + window.location.host;
+        const adress = window.location.href.replace(domain,'');
+        let current = 0;
+        for (let i = 0; i < list.length; i++) {
+            if (adress.search(list[i].getAttribute('href')) === 0) {
+                current = i;
+                list[current].className = 'menu-btn active';    
+            };
+        };
+    </script>
+    </body>
+</html>	

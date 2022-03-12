@@ -1,0 +1,25 @@
+{
+  "name": "webapplearnings",
+  "version": "1.0.0",
+  "description": "Docu for WebApplication Course",
+  "dependencies": {},
+  "devDependencies": {
+    "@metalsmith/collections": "^1.2.1",
+    "@metalsmith/layouts": "^2.4.0",
+    "@metalsmith/markdown": "^1.4.0",
+    "@metalsmith/permalinks": "^2.4.0",
+    "browser-sync": "^2.27.7",
+    "handlebars": "^4.7.7",
+    "jstransformer-handlebars": "^1.2.0",
+    "metalsmith": "^2.4.2",
+    "metalsmith-concat": "^7.0.3",
+    "metalsmith-metallic": "^2.0.3",
+    "dotenv": "^16.0.0"
+  },
+  "scripts": {
+    "start": "node metalsmith.js",
+    "serve": "browser-sync start --server 'build'"
+  },
+  "author": "Giuseppe Costabile",
+  "license": "ISC"
+}
