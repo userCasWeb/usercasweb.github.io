@@ -256,6 +256,11 @@ h5,
   margin-right: auto;
 }
 
+em {
+  font-weight: bold;
+  color: var(--color-base);
+}
+
 /*** layout.css ***/
 
 /* centering the most outer container */
