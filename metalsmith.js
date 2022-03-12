@@ -19,7 +19,7 @@ Metalsmith(__dirname)
     siteurl: dotenv.SITEURL
   })
   .source('./src')
-  .destination('./build')
+  .destination('./docs')
   .clean(true)
   .use(collections({
     javascript: { 
