@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebAppDev</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+  </head>
+  <body class="container">
+    <header>
+      <a class="s-logo" href="/">WebAppDev</a>
+      <nav class="navi">
+        <a class="menu-btn" href="/javascript"><span>01</span>Javascript</a>
+        <a class="menu-btn" href="/html"><span>02</span>Html</a>
+        <a class="menu-btn" href="/css"><span>03</span>Css</a>
+      </nav>
+    </header>  <h1 class="center padding-top-4">Ein Intro zu Arrow Function und ihre Spezifikas</h1>
+  <p class="center excerpt"><span>8.3.2020 @ javascript</span></p>
+  <main class="padding-col-0-14 padding-top-2">
+  <p>Eine Arrow Function oder Fat Arrow Function oder einfach Pfeilfunktion hat im Vergleich zur der Function Expression oder der Function Declaration eine kürzere Syntax. Sie wird, je mehr man sie braucht, auch viel leserlicher als die Standart definition einer Function. Nehme wir das Beispiel mit der Fläche des Quadrats:</p>
+<pre><code class="hljs js"><span class="hljs-comment">// Function Declaration</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">square</span>(<span class="hljs-params">x</span>) </span>{
+  <span class="hljs-keyword">return</span> x * x;
+}
+
+<span class="hljs-comment">// Fat Arrow Function</span>
+<span class="hljs-keyword">const</span> square = <span class="hljs-function">(<span class="hljs-params">x</span>) =&gt;</span> {
+  <span class="hljs-keyword">return</span> x * x;
+}
+
+<span class="hljs-comment">// Fat Arrow Function gekürzt</span>
+<span class="hljs-keyword">const</span> square = <span class="hljs-function">(<span class="hljs-params">x</span>) =&gt;</span> { <span class="hljs-keyword">return</span> x * x; }
+
+<span class="hljs-comment">// Fat Arrow Function nochmehr gekürzt</span>
+<span class="hljs-keyword">const</span> square = <span class="hljs-function"><span class="hljs-params">x</span> =&gt;</span> x * x;</code></pre>
+
+<p>Bei der letzten Schreibweise wurden die Klammer für den Parameter weggelassen. Die geschweiften Klammern können auch weggelassen werden, wenn nur ein Statement oder eine Expression folgt. Sollten aber 2 Parameter übergeben werden, dann sind die Klammern wieder nötig. Ebenfalls nötig sind die Klammern wenn gar kein Paramateer bestimmt wird. </p>
+<pre><code class="hljs js"><span class="hljs-comment">// Mit zwei Parameter</span>
+<span class="hljs-keyword">const</span> surface = <span class="hljs-function">(<span class="hljs-params">x, y</span>) =&gt;</span> x * y;
+surface(<span class="hljs-number">3</span>, <span class="hljs-number">4</span>); <span class="hljs-comment">// -&gt; 12</span>
+
+<span class="hljs-comment">// Mit keinem Parameter</span>
+<span class="hljs-keyword">const</span> surface = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Hallo`</span>);
+surface(); <span class="hljs-comment">// -&gt; Hallo</span>
+
+<span class="hljs-comment">// Mit mehreren Statements</span>
+<span class="hljs-keyword">const</span> greet = <span class="hljs-function"><span class="hljs-params">age</span> =&gt;</span> {
+  <span class="hljs-keyword">let</span> greetings = (<span class="hljs-string">`Your are <span class="hljs-subst">${age}</span> year old`</span>);
+  <span class="hljs-keyword">let</span> quote = <span class="hljs-string">`and stll cool`</span>;
+  <span class="hljs-keyword">let</span> concate = <span class="hljs-string">`<span class="hljs-subst">${greetings}</span> <span class="hljs-subst">${quote}</span>`</span>;
+  <span class="hljs-built_in">console</span>.log(concate); 
+} 
+greet(<span class="hljs-number">56</span>); <span class="hljs-comment">// -&gt; Your are 56 year old and still cool</span></code></pre>
+
+<p>Daneben gibt es noch mehr zu beachten, wenn man mit Arrow Functions arbeitet. Dazu mehr in einem weiteren Beitrag. Sei mal gesagt, dass das this keyword, arguments binding und constructor anderst sind als bei normalen Function Definitionen wie auch der Scope und die Bereitstellung im Codeverlauf.</p>
+
+  </main>
+    <script>
+        const list = document.getElementsByClassName('menu-btn');
+        const domain = window.location.protocol + '//' + window.location.host;
+        const adress = window.location.href.replace(domain,'');
+        let current = 0;
+        for (let i = 0; i < list.length; i++) {
+            if (adress.search(list[i].getAttribute('href')) === 0) {
+                current = i;
+                list[current].className = 'menu-btn active';    
+            };
+        };
+    </script>
+    </body>
+</html>	

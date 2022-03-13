@@ -21,7 +21,7 @@
   <p class="center excerpt"><span>7.3.2020 @ javascript</span></p>
   <main class="padding-col-0-14 padding-top-2">
   <p>Um eine Function zu definieren gibt es in Javascript 3 grundsätzliche verschiedene Möglichkeiten. Je nach Situation und Preferenz eignet sich die eine Art besser oder schlechter. </p>
-<h2 id="function-definition">Function Definition</h2>
+<h2 id="1-function-definition">1. Function Definition</h2>
 <h3 id="function-declaration">Function Declaration</h3>
 <p>Die erste Möglichkeit besteht darin, mit dem Keyword <strong>function</strong> die Function zu deklarieren. So als würde man eine Variable mit dem Keyword <strong>var</strong> deklarieren. Dabei geben wir der Function einen Namen. Im Beispiel unten ist es &quot;square&quot;. </p>
 <pre><code class="hljs js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">square</span>(<span class="hljs-params">x</span>) </span>{
@@ -40,12 +40,11 @@
   <span class="hljs-keyword">return</span> x * x;
 }</code></pre>
 
-<h2 id="the-return-statement">The return statement</h2>
+<h2 id="2-the-return-statement">2. The return statement</h2>
 <p>Bei allen 3 Definitionen ist ein <strong>return statement</strong> im <strong>function body</strong>. Dieses statement ist notwendig um das Resultat der function zurückzugeben. Dieses statement kann aber auch bei einer <strong>Arrow Function</strong> weggelassen werden. Dazu mehr in einem anderen Beitrag. Wenn wir das return statement wegglassen und dafür eine Konstante definieren, wird beim Aufruf der Function undefined zurückgegeben.</p>
 <pre><code class="hljs js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">square</span>(<span class="hljs-params">x</span>) </span>{
   <span class="hljs-keyword">const</span> a = x * x;
 }
-
 square(<span class="hljs-number">9</span>); <span class="hljs-comment">// -&gt; undefined</span></code></pre>
 
 <p>Mit dem Aufruf des Function Name <strong>square</strong> wird die Function selber zurückgegeben. Man gibt keine Argumente mit. </p>
@@ -59,17 +58,15 @@ square; <span class="hljs-comment">// -&gt; f square(x) {return x * x;}</span>
 <span class="hljs-keyword">const</span> square = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">x</span>) </span>{
   <span class="hljs-keyword">return</span> x * x;
 }
-
 square; <span class="hljs-comment">// -&gt; f (x) {return x * x;}</span>
 
 <span class="hljs-comment">// Arrow Function Expression</span>
 <span class="hljs-keyword">const</span> square = <span class="hljs-function">(<span class="hljs-params">x</span>) =&gt;</span> {
   <span class="hljs-keyword">return</span> x * x;
 }
-
 square; <span class="hljs-comment">// -&gt; f (x) {return x * x;}</span></code></pre>
 
-<h2 id="too-many-or-too-few-arguments">Too many or too few arguments</h2>
+<h2 id="3-too-many-or-too-few-arguments">3. Too many or too few arguments</h2>
 <p>Wenn wir aber nicht alle <strong>arguments</strong> beim Aufruf der <strong>function</strong> mitgeben, wird ein NaN zurückgegeben. Wenn ein Argument zuviel mitgegeben wird, wird dieser ignoriert.</p>
 <pre><code class="hljs js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">surface</span>(<span class="hljs-params">x, y</span>) </span>{
   <span class="hljs-keyword">return</span> x * y;
