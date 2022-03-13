@@ -18,7 +18,7 @@
   },
   "scripts": {
     "start": "node metalsmith.js",
-    "serve": "browser-sync start --server 'build'"
+    "serve": "browser-sync start --server 'docs'"
   },
   "author": "Giuseppe Costabile",
   "license": "ISC"
