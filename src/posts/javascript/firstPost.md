@@ -8,7 +8,7 @@ excerpt: Welche Möglichkeiten werden unterschieden um Functions zu definieren? 
 
 Um eine Function zu definieren gibt es in Javascript 3 grundsätzliche verschiedene Möglichkeiten. Je nach Situation und Preferenz eignet sich die eine Art besser oder schlechter. 
 
-## Function Definition
+## 1. Function Definition
 ### Function Declaration
 
 Die erste Möglichkeit besteht darin, mit dem Keyword **function** die Function zu deklarieren. So als würde man eine Variable mit dem Keyword **var** deklarieren. Dabei geben wir der Function einen Namen. Im Beispiel unten ist es "square". 
@@ -39,7 +39,7 @@ const square = (x) => {
 }
 ```
 
-## The return statement
+## 2. The return statement
 
 Bei allen 3 Definitionen ist ein **return statement** im **function body**. Dieses statement ist notwendig um das Resultat der function zurückzugeben. Dieses statement kann aber auch bei einer **Arrow Function** weggelassen werden. Dazu mehr in einem anderen Beitrag. Wenn wir das return statement wegglassen und dafür eine Konstante definieren, wird beim Aufruf der Function undefined zurückgegeben.
 
@@ -47,7 +47,6 @@ Bei allen 3 Definitionen ist ein **return statement** im **function body**. Dies
 function square(x) {
   const a = x * x;
 }
-
 square(9); // -> undefined
 ```
 
@@ -64,18 +63,16 @@ square; // -> f square(x) {return x * x;}
 const square = function(x) {
   return x * x;
 }
-
 square; // -> f (x) {return x * x;}
 
 // Arrow Function Expression
 const square = (x) => {
   return x * x;
 }
-
 square; // -> f (x) {return x * x;}
 ```
 
-## Too many or too few arguments
+## 3. Too many or too few arguments
 
 Wenn wir aber nicht alle **arguments** beim Aufruf der **function** mitgeben, wird ein NaN zurückgegeben. Wenn ein Argument zuviel mitgegeben wird, wird dieser ignoriert.
 

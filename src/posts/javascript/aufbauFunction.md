@@ -13,8 +13,7 @@ function calcTip(meal, tip) {
   const total = meal * (100 + tip) / 100;
   return total; 
 }
-
-const myTip = calcTip(75, 10);
+const myTip = calcTip(75, 10); // -> 82.5
 ```
 
 Das Wort functions ist das **keyword**. Danach folgt calcTip welches den **function name** definiert. In Klammern geschrieben sind die **parameters**, wenn es mehrere sind wie im Beispiel mit einem Komma getrennt. Danach folgt die öffnende geschweifte Klammer, welche den **scope startet** oder öffnet. Die folgenden 2 Zeilen sind sogenante **statements**. Wobei das letzte statement die **return statement** ist. Am Schluss der Function Declaration ist die schliessende geschweifte Klammer, welchen den **scope schliesst**. Beide statements sind im **function body** drin. 
