@@ -74,7 +74,7 @@ K = <span class="hljs-function"><span class="hljs-params">x</span> =&gt;</span> 
 <p>Wenn wir nun das Beispiel aus der 𝛽-Reduktion nehmen, können wir die Function auch reduzieren mit der 𝜂-Reduktion und der 𝛽-Reduktion. </p>
 <pre><code class="hljs js">( <span class="hljs-function"><span class="hljs-params">f</span> =&gt;</span>  <span class="hljs-function"><span class="hljs-params">x</span> =&gt;</span>  f   (x) ) (I) (<span class="hljs-number">1</span>); 
 ( <span class="hljs-function"><span class="hljs-params">f</span> =&gt;</span>        f       ) (I) (<span class="hljs-number">1</span>); <span class="hljs-comment">// -&gt; 𝜂-Reduktion</span>
-                    (I) (I) (<span class="hljs-number">1</span>); <span class="hljs-comment">// -&gt; 𝛽-Reduktion</span>
+                    (I) (I) (<span class="hljs-number">1</span>); <span class="hljs-comment">// -&gt; α-Reduktion I := f =&gt; f</span>
                             (<span class="hljs-number">1</span>); <span class="hljs-comment">// -&gt; 𝜂-Reduktion</span></code></pre>
   </main>
     <script>

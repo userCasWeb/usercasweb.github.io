@@ -93,7 +93,6 @@ Wenn wir nun das Beispiel aus der 𝛽-Reduktion nehmen, können wir die Functio
 ```js
 ( f =>  x =>  f   (x) ) (I) (1); 
 ( f =>        f       ) (I) (1); // -> 𝜂-Reduktion
-                    (I) (I) (1); // -> 𝛽-Reduktion
+                    (I) (I) (1); // -> α-Reduktion I := f => f
                             (1); // -> 𝜂-Reduktion
-
 ```
