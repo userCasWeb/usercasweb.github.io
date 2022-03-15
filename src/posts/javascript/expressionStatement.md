@@ -1,6 +1,6 @@
 ---
 title:  Was sind eigentlich Expressions und Statements?
-date: 2020-03-08
+date: 2020-03-09
 collections: javascript
 layout: post.hbs
 excerpt: Manchmal nicht ganz trivial, unterscheidet Javascript zwischen Expressions und Statements. Ein Primer zu den Ausdrücken. 
