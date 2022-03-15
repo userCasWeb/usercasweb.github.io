@@ -119,11 +119,11 @@ Eine bedingte Anweisung ist ein beliebiger Code, der verwendet wird, um die Vora
 
 ```js
 if ( 12 < 56 ) {
-  console.log(`12 ist smaler than 56`);
+  console.log(`12 is smaler than 56`);
   } else {
-    console.log(`12 ist bigger than 56`);
+    console.log(`12 is bigger than 56`);
 }
-// -> 12 ist bigger than 56
+// -> 12 ist smaler than 56
 ```
 
 ### Loops and Jumps
