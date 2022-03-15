@@ -6,7 +6,7 @@ layout: post.hbs
 excerpt: Welche Möglichkeiten werden unterschieden um Functions zu definieren? Mit Beispielen.
 ---
 
-Um eine Function zu definieren gibt es in Javascript 3 grundsätzliche verschiedene Möglichkeiten. Je nach Situation und Preferenz eignet sich die eine Art besser oder schlechter. 
+Um eine Function zu definieren gibt es in Javascript 3 grundsätzliche verschiedene Möglichkeiten. Je nach Situation und Preferenz eignet sich die eine Art besser oder schlechter. Dann wird noch kurz das Return Statement angeschaut und am Schluss noch kurz die Arguments.
 
 ## 1. Function Definition
 ### Function Declaration
@@ -74,7 +74,7 @@ square; // -> f (x) {return x * x;}
 
 ## 3. Too many or too few arguments
 
-Wenn wir aber nicht alle **arguments** beim Aufruf der **function** mitgeben, wird ein NaN zurückgegeben. Wenn ein Argument zuviel mitgegeben wird, wird dieser ignoriert.
+Wenn wir aber nicht alle **arguments** beim Aufruf der **function** mitgeben, wird ein NaN zurückgegeben. Je Nachdem wird auch ein undefinet zurückgegeben. Wenn ein Argument zuviel mitgegeben wird, wird dieser ignoriert.
 
 ```js
 function surface(x, y) {
@@ -84,4 +84,16 @@ surface(); // -> Nan
 surface(4); // -> NaN
 surface(4,5); // -> 20
 surface(4,5,10); // -> 20
+```
+
+Hier noch ein Beispiel mit Strings. Hier wird bei einem fehlenden Argument undefined zurückgegeben, aber der erste Wert wird zurückgegeben.
+
+```js
+function concate(x. y) {
+  return x + y;
+}
+concate(); // -> NaN
+concate("Hallo "); // -> Hallo undefined
+concate("Hallo ", "World "); // -> Hello World
+concate("Hallo ", "World ", "we love you"); // -> Hello World
 ```

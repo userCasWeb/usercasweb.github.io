@@ -20,7 +20,7 @@
     </header>  <h1 class="center padding-top-4">3 Wege eine Function zu definieren</h1>
   <p class="center excerpt"><span>7.3.2020 @ javascript</span></p>
   <main class="padding-col-0-14 padding-top-2">
-  <p>Um eine Function zu definieren gibt es in Javascript 3 grundsätzliche verschiedene Möglichkeiten. Je nach Situation und Preferenz eignet sich die eine Art besser oder schlechter. </p>
+  <p>Um eine Function zu definieren gibt es in Javascript 3 grundsätzliche verschiedene Möglichkeiten. Je nach Situation und Preferenz eignet sich die eine Art besser oder schlechter. Dann wird noch kurz das Return Statement angeschaut und am Schluss noch kurz die Arguments.</p>
 <h2 id="1-function-definition">1. Function Definition</h2>
 <h3 id="function-declaration">Function Declaration</h3>
 <p>Die erste Möglichkeit besteht darin, mit dem Keyword <strong>function</strong> die Function zu deklarieren. So als würde man eine Variable mit dem Keyword <strong>var</strong> deklarieren. Dabei geben wir der Function einen Namen. Im Beispiel unten ist es &quot;square&quot;. </p>
@@ -67,7 +67,7 @@ square; <span class="hljs-comment">// -&gt; f (x) {return x * x;}</span>
 square; <span class="hljs-comment">// -&gt; f (x) {return x * x;}</span></code></pre>
 
 <h2 id="3-too-many-or-too-few-arguments">3. Too many or too few arguments</h2>
-<p>Wenn wir aber nicht alle <strong>arguments</strong> beim Aufruf der <strong>function</strong> mitgeben, wird ein NaN zurückgegeben. Wenn ein Argument zuviel mitgegeben wird, wird dieser ignoriert.</p>
+<p>Wenn wir aber nicht alle <strong>arguments</strong> beim Aufruf der <strong>function</strong> mitgeben, wird ein NaN zurückgegeben. Je Nachdem wird auch ein undefinet zurückgegeben. Wenn ein Argument zuviel mitgegeben wird, wird dieser ignoriert.</p>
 <pre><code class="hljs js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">surface</span>(<span class="hljs-params">x, y</span>) </span>{
   <span class="hljs-keyword">return</span> x * y;
 }
@@ -75,6 +75,15 @@ surface(); <span class="hljs-comment">// -&gt; Nan</span>
 surface(<span class="hljs-number">4</span>); <span class="hljs-comment">// -&gt; NaN</span>
 surface(<span class="hljs-number">4</span>,<span class="hljs-number">5</span>); <span class="hljs-comment">// -&gt; 20</span>
 surface(<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">10</span>); <span class="hljs-comment">// -&gt; 20</span></code></pre>
+
+<p>Hier noch ein Beispiel mit Strings. Hier wird bei einem fehlenden Argument undefined zurückgegeben, aber der erste Wert wird zurückgegeben.</p>
+<pre><code class="hljs js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">concate</span>(<span class="hljs-params">x. y</span>) </span>{
+  <span class="hljs-keyword">return</span> x + y;
+}
+concate(); <span class="hljs-comment">// -&gt; NaN</span>
+concate(<span class="hljs-string">"Hallo "</span>); <span class="hljs-comment">// -&gt; Hallo undefined</span>
+concate(<span class="hljs-string">"Hallo "</span>, <span class="hljs-string">"World "</span>); <span class="hljs-comment">// -&gt; Hello World</span>
+concate(<span class="hljs-string">"Hallo "</span>, <span class="hljs-string">"World "</span>, <span class="hljs-string">"we love you"</span>); <span class="hljs-comment">// -&gt; Hello World</span></code></pre>
   </main>
     <script>
         const list = document.getElementsByClassName('menu-btn');
