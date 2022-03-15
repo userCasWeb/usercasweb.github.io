@@ -9,8 +9,8 @@ excerpt: Wie schreibt man eine Arrow Function und auf was sollte dabei beachtet 
 Eine Arrow Function oder Fat Arrow Function oder einfach Pfeilfunktion hat im Vergleich zur der Function Expression oder der Function Declaration eine kürzere Syntax. Sie wird, je mehr man sie braucht, auch viel leserlicher als die Standart definition einer Function. Nehme wir das Beispiel mit der Fläche des Quadrats:
 
 ```js
-// Function Declaration
-function square(x) {
+// Function Expression
+const square = function(x) {
   return x * x;
 }
 
@@ -19,25 +19,25 @@ const square = (x) => {
   return x * x;
 }
 
-// Fat Arrow Function gekürzt
+// one line Fat Arrow Function
 const square = (x) => { return x * x; }
 
-// Fat Arrow Function nochmehr gekürzt
+// shortened Fat Arrow Function 
 const square = x => x * x;
 ```
 
 Bei der letzten Schreibweise wurden die Klammer für den Parameter weggelassen. Die geschweiften Klammern können auch weggelassen werden, wenn nur ein Statement oder eine Expression folgt. Sollten aber 2 Parameter übergeben werden, dann sind die Klammern wieder nötig. Ebenfalls nötig sind die Klammern wenn gar kein Paramateer bestimmt wird. 
 
 ```js
-// Mit zwei Parameter
+// with 2 parameters
 const surface = (x, y) => x * y;
 surface(3, 4); // -> 12
 
-// Mit keinem Parameter
+// without parameters
 const surface = () => console.log(`Hallo`);
 surface(); // -> Hallo
 
-// Mit mehreren Statements
+// with multiple statements
 const greet = age => {
   let greetings = (`Your are ${age} year old`);
   let quote = `and stll cool`;

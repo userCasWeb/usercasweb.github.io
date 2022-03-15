@@ -21,8 +21,8 @@
   <p class="center excerpt"><span>8.3.2020 @ javascript</span></p>
   <main class="padding-col-0-14 padding-top-2">
   <p>Eine Arrow Function oder Fat Arrow Function oder einfach Pfeilfunktion hat im Vergleich zur der Function Expression oder der Function Declaration eine kürzere Syntax. Sie wird, je mehr man sie braucht, auch viel leserlicher als die Standart definition einer Function. Nehme wir das Beispiel mit der Fläche des Quadrats:</p>
-<pre><code class="hljs js"><span class="hljs-comment">// Function Declaration</span>
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">square</span>(<span class="hljs-params">x</span>) </span>{
+<pre><code class="hljs js"><span class="hljs-comment">// Function Expression</span>
+<span class="hljs-keyword">const</span> square = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">x</span>) </span>{
   <span class="hljs-keyword">return</span> x * x;
 }
 
@@ -31,22 +31,22 @@
   <span class="hljs-keyword">return</span> x * x;
 }
 
-<span class="hljs-comment">// Fat Arrow Function gekürzt</span>
+<span class="hljs-comment">// one line Fat Arrow Function</span>
 <span class="hljs-keyword">const</span> square = <span class="hljs-function">(<span class="hljs-params">x</span>) =&gt;</span> { <span class="hljs-keyword">return</span> x * x; }
 
-<span class="hljs-comment">// Fat Arrow Function nochmehr gekürzt</span>
+<span class="hljs-comment">// shortened Fat Arrow Function </span>
 <span class="hljs-keyword">const</span> square = <span class="hljs-function"><span class="hljs-params">x</span> =&gt;</span> x * x;</code></pre>
 
 <p>Bei der letzten Schreibweise wurden die Klammer für den Parameter weggelassen. Die geschweiften Klammern können auch weggelassen werden, wenn nur ein Statement oder eine Expression folgt. Sollten aber 2 Parameter übergeben werden, dann sind die Klammern wieder nötig. Ebenfalls nötig sind die Klammern wenn gar kein Paramateer bestimmt wird. </p>
-<pre><code class="hljs js"><span class="hljs-comment">// Mit zwei Parameter</span>
+<pre><code class="hljs js"><span class="hljs-comment">// with 2 parameters</span>
 <span class="hljs-keyword">const</span> surface = <span class="hljs-function">(<span class="hljs-params">x, y</span>) =&gt;</span> x * y;
 surface(<span class="hljs-number">3</span>, <span class="hljs-number">4</span>); <span class="hljs-comment">// -&gt; 12</span>
 
-<span class="hljs-comment">// Mit keinem Parameter</span>
+<span class="hljs-comment">// without parameters</span>
 <span class="hljs-keyword">const</span> surface = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Hallo`</span>);
 surface(); <span class="hljs-comment">// -&gt; Hallo</span>
 
-<span class="hljs-comment">// Mit mehreren Statements</span>
+<span class="hljs-comment">// with multiple statements</span>
 <span class="hljs-keyword">const</span> greet = <span class="hljs-function"><span class="hljs-params">age</span> =&gt;</span> {
   <span class="hljs-keyword">let</span> greetings = (<span class="hljs-string">`Your are <span class="hljs-subst">${age}</span> year old`</span>);
   <span class="hljs-keyword">let</span> quote = <span class="hljs-string">`and stll cool`</span>;

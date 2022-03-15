@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebAppDev</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+  </head>
+  <body class="container">
+    <header>
+      <a class="s-logo" href="/">WebAppDev</a>
+      <nav class="navi">
+        <a class="menu-btn" href="/javascript"><span>01</span>Javascript</a>
+        <a class="menu-btn" href="/html"><span>02</span>Html</a>
+        <a class="menu-btn" href="/css"><span>03</span>Css</a>
+      </nav>
+    </header>  <h1 class="center padding-top-4">Was sind eigentlich Expressions und Statements?</h1>
+  <p class="center excerpt"><span>8.3.2020 @ javascript</span></p>
+  <main class="padding-col-0-14 padding-top-2">
+  <p>Expressions (Ausdrücke) und Statements (Anweisungen) sind zwei wichtige Begriffe in JavaScript. Angesichts der Häufigkeit, mit der diese beiden Begriffe zur Beschreibung von JavaScript Code verwendet werden, ist es wichtig, ihre Bedeutung und den Unterschied zwischen den beiden zu verstehen.</p>
+<h2 id="1-expression">1. Expression</h2>
+<p>Jede Code, der zu einem Wert ausgewertet werden kann, ist eine Expression. Da Expressions Werte erzeugen, können sie überall in einem Programm erscheinen, wo JavaScript einen Wert erwartet, wie zum Beispiel die Argumente eines Funktionsaufrufs. Die Expressions können noch in folgende Deklarationen untertteilt werden.</p>
+<h3 id="arithmetic-expressions">Arithmetic Expressions</h3>
+<p>Arithmetische Expressions geben einen numerischen Wert zurück.</p>
+<pre><code class="hljs js"><span class="hljs-number">20</span> / <span class="hljs-number">2</span> <span class="hljs-comment">// -&gt; evaluates to 10</span>
+<span class="hljs-number">10</span> + <span class="hljs-number">30</span> <span class="hljs-comment">// -&gt; evaluates to 40</span>
+i++ <span class="hljs-comment">// -&gt; increase by 1</span></code></pre>
+
+<h3 id="string-expressions">String Expressions</h3>
+<p>String Expression geben einen String zurück.</p>
+<pre><code class="hljs js"><span class="hljs-string">`Hallo`</span> <span class="hljs-comment">// -&gt; evaluates to Hallo</span>
+<span class="hljs-string">`Hallo`</span> + <span class="hljs-string">` World`</span> <span class="hljs-comment">// -&gt; evaluates to Hello World</span></code></pre>
+
+<h3 id="primary-expressions">Primary Expressions</h3>
+<p>Expressions die als Variablenreferenz ausgewertet werden, Literalwerte und einige Schlüsselwörter. Sie dienen als Grundlage für die Erstellung anderer Ausdrücke.</p>
+<pre><code class="hljs js"><span class="hljs-number">36</span> <span class="hljs-comment">// -&gt; integer 36</span>
+<span class="hljs-keyword">this</span> <span class="hljs-comment">// -&gt; the current value</span>
+<span class="hljs-literal">undefined</span> <span class="hljs-comment">// -&gt; undefined</span>
+<span class="hljs-literal">true</span> <span class="hljs-comment">// -&gt; evaluates to true</span>
+
+<span class="hljs-comment">// also keywords can be expressions</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span>
+<span class="hljs-title">class</span></span></code></pre>
+
+<h3 id="boolean-expressions">Boolean Expressions</h3>
+<p>Expressions, die den booleschen Wert wahr oder falsch ergeben, werden als Boolean Expressions betrachtet. Bei boolen Expressions werden häufig logische Operatoren wie &amp;&amp;, || und ! verwendet. True und false sind aber auch primary expressions. Siehe weiter oben.</p>
+<pre><code class="hljs js"><span class="hljs-number">1</span> &gt; <span class="hljs-number">2</span> <span class="hljs-comment">// -&gt; evaluates to false</span>
+<span class="hljs-number">35</span> &lt; <span class="hljs-number">48</span> <span class="hljs-comment">// -&gt; evaluates to true</span></code></pre>
+
+<h3 id="assignement-expressions">Assignement Expressions</h3>
+<p>Wenn Expressions den = Operator verwenden, um einer Variablen einen Wert zuzuweisen, wird dies als Assignment Expressions (Zuweisungsausdruck) bezeichnet. </p>
+<pre><code class="hljs js">age = <span class="hljs-number">34</span>; <span class="hljs-comment">// -&gt; evaluates to 34</span>
+greet = <span class="hljs-string">`Hallo Bob!`</span>; <span class="hljs-comment">// -&gt; evaluates to Hallo Bob!</span>
+
+<span class="hljs-keyword">let</span> a = (b = <span class="hljs-number">1</span>); 
+<span class="hljs-comment">// -&gt; evaluates to 1</span>
+<span class="hljs-comment">// -&gt; 1 is assigned to b and a is assigned to the evaluated expression b = 1</span>
+<span class="hljs-comment">// -&gt; let is not part of the assignement expression</span></code></pre>
+
+<h3 id="left-hand-side-expressions">Left-hand-side Expressions</h3>
+<p>Left-hand-side Expressions sind diejenigen Expressions welche auf der linken Seite eines Zuweisungsausdrucks erscheinen können. Sie geben eine Referenz zurück.</p>
+<pre><code class="hljs js"><span class="hljs-keyword">new</span> <span class="hljs-comment">// -&gt; evaluates to a instance of a constructor</span>
+<span class="hljs-keyword">super</span> <span class="hljs-comment">// -&gt; calls the parent constructor</span>
+(<span class="hljs-keyword">new</span> object).x = <span class="hljs-number">1</span>; <span class="hljs-comment">// -&gt; evaluates to 1</span>
+names[<span class="hljs-number">4</span>] = <span class="hljs-string">`John`</span>; <span class="hljs-comment">// -&gt; evaluates to John</span></code></pre>
+
+<h2 id="2-statements">2. Statements</h2>
+<p>Ein Statement ist eine Anweisung, eine bestimmte Aktion auszuführen. Solche Aktionen umfassen das Erstellen einer Variablen oder einer Funktion, das Durchlaufen eines Arrays von Elementen, das Auswerten von Code basierend auf einer bestimmten Bedingung usw. JavaScript-Programme sind eigentlich eine Folge von Anweisungen. Auch Statements können unterteilt werden.</p>
+<h3 id="declaration-statements">Declaration Statements</h3>
+<p>Zu diesen Statements gehören die Definition von Variables und Functions. Diese sind var, const, let und function. Diese Statements können an anderen Stellen im Programm verwendet werden. Man weist diesen auch Werte zu.  </p>
+<pre><code class="hljs js"><span class="hljs-keyword">let</span> square; <span class="hljs-comment">// -&gt; let declares square</span>
+<span class="hljs-keyword">const</span> name; <span class="hljs-comment">// -&gt; const declares name</span>
+
+<span class="hljs-keyword">var</span> age = <span class="hljs-number">34</span>;
+<span class="hljs-comment">// -&gt; var age is a declaration statement and </span>
+<span class="hljs-comment">// -&gt; age = 34 is an assignement expression</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">greet</span>(<span class="hljs-params">name</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Hallo <span class="hljs-subst">${name}</span>`</span>);
+}
+<span class="hljs-comment">// -&gt; a function declaration statement</span></code></pre>
+
+<h3 id="expression-statements">Expression Statements</h3>
+<p>Überall dort wo JS ein Statement erwartet, kann diese auch als Expression geschrieben werden. Nicht aber umgekehrt. Eine Expression kann nicht als Statement geschrieben werden. Meistens erkennbar, wenn eine Expression mit Semikolon abgeschlossen wird. Schwierig zu unterscheiden...!</p>
+<pre><code class="hljs js"><span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Hallo Bob`</span>);
+<span class="hljs-comment">// -&gt; console.log is a statement</span>
+<span class="hljs-built_in">console</span>.log( <span class="hljs-keyword">const</span> a ); 
+<span class="hljs-comment">// -&gt; err, const a is a declared statement, but an expression was expected</span></code></pre>
+
+<h3 id="conditional-statements">Conditional Statements</h3>
+<p>Eine bedingte Anweisung ist ein beliebiger Code, der verwendet wird, um die Voraussetzungen anzugeben, die erforderlich sind, damit der Computer bestimmte Aktionen ausführen kann. Die vier Arten von bedingten Anweisungen in JavaScript sind if, else, else if und switch. Sie bestimmen den Kontrollfluss im Programmm.</p>
+<pre><code class="hljs js"><span class="hljs-keyword">if</span> ( <span class="hljs-number">12</span> &lt; <span class="hljs-number">56</span> ) {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`12 ist smaler than 56`</span>);
+  } <span class="hljs-keyword">else</span> {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`12 ist bigger than 56`</span>);
+}
+<span class="hljs-comment">// -&gt; 12 ist bigger than 56</span></code></pre>
+
+<h3 id="loops-and-jumps">Loops and Jumps</h3>
+<p>Looping Statements umfassen folgende Anweisungen: while, do/while, for und for/in. Jump Statements werden verwendet, um den JavaScript-Interpreter an eine bestimmte Stelle innerhalb des Programms springen zu lassen. Beispiele für Jump Statements sind unter anderem Break, Continue, Return und Throw.</p>
+<pre><code class="hljs js"><span class="hljs-keyword">let</span> timer = <span class="hljs-number">1</span>;
+
+<span class="hljs-keyword">while</span> (timer &lt; <span class="hljs-number">5</span>) {
+  <span class="hljs-built_in">console</span>.log(timer);
+  ++timer;
+}
+<span class="hljs-comment">// -&gt; 1, 2, 3, 4, 5</span></code></pre>
+
+<p>Wichtig! Die Unterscheidung ist insofern von Bedeutung um Fehler zu verstehen, Code zu lesen und wissen was gerade im Code geschiet. Ist es eine Anweisung oder ein Ausdruck? Einfach zu merken ist auch, dass Expressions die kleinere Einheit im Code ist als ein Statement. Expressions sind in Statements integriert. </p>
+
+  </main>
+    <script>
+        const list = document.getElementsByClassName('menu-btn');
+        const domain = window.location.protocol + '//' + window.location.host;
+        const adress = window.location.href.replace(domain,'');
+        let current = 0;
+        for (let i = 0; i < list.length; i++) {
+            if (adress.search(list[i].getAttribute('href')) === 0) {
+                current = i;
+                list[current].className = 'menu-btn active';    
+            };
+        };
+    </script>
+    </body>
+</html>	
