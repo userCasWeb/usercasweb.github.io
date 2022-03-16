@@ -16,9 +16,9 @@
   --color-text-h: #001829; 
   --color-base: #c792ea; /* #86b3D1 */
   --color-acsent: #c792ea; /* #A16E83 */
-  --color-success: #80b912;
-  --color-error: #f05230;
-  --color-border: #ddd;
+  --color-background-code: #000000;
+  --color-titel: #c792ea;
+  --color-excerpt: #A16E83;
 
   /* unitless viewport widths in rem -> Breakpoints*/
   --min-vw: 20; /* 320:16 */
@@ -34,4 +34,16 @@
 /* clamp calculation */
 * {
   --clamp: clamp(1rem * var(--min), (var(--min) * 1rem) + (var(--max) - var(--min)) * (100vw - (var(--min-vw) * 1rem)) / (var(--max-vw) - var(--min-vw)), 1rem * var(--max));
+}
+
+[data-theme="dark"] {
+  --color-background: #010b14; /* #010b14 */
+  --color-text: #A16E83; /* #edf7ff */
+  --color-text-h: #edf7ff; 
+  --color-base: #86b3D1; /* #86b3D1 */
+  --color-acsent: #A16E83; /* #A16E83 */
+  --color-background-code: #011627 ;
+  --color-titel: #86b3D1;
+  --color-excerpt: #A16E83;
+
 }

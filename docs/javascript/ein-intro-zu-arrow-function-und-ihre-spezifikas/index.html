@@ -16,6 +16,12 @@
         <a class="menu-btn" href="/javascript"><span>01</span>Javascript</a>
         <a class="menu-btn" href="/html"><span>02</span>Html</a>
         <a class="menu-btn" href="/css"><span>03</span>Css</a>
+        <div class="theme-switch-wrapper">
+          <label for="checkbox" class="theme-switch">
+            <input type="checkbox" id="checkbox">
+            <div class="slider round"></div>
+          </label>
+        </div>
       </nav>
     </header>  <h1 class="center padding-top-4">Ein Intro zu Arrow Function und ihre Spezifikas</h1>
   <p class="center dateTag"><span>8.3.2020 @ javascript</span></p>
@@ -69,6 +75,28 @@ greet(<span class="hljs-number">56</span>); <span class="hljs-comment">// -&gt; 
                 list[current].className = 'menu-btn active';    
             };
         };
+
+        const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+        const currentTheme = localStorage.getItem('theme');
+
+        if (currentTheme) {
+            document.documentElement.setAttribute('data-theme', currentTheme);
+            if (currentTheme === 'dark') {
+                toggleSwitch.checked = true;
+            }
+        }
+
+        function switchTheme(e) {
+            if (e.target.checked) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+            }
+            else {
+                document.documentElement.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+            }
+        }
+        toggleSwitch.addEventListener('change', switchTheme, false);
     </script>
     </body>
 </html>	

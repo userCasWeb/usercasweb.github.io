@@ -16,9 +16,15 @@
         <a class="menu-btn" href="/javascript"><span>01</span>Javascript</a>
         <a class="menu-btn" href="/html"><span>02</span>Html</a>
         <a class="menu-btn" href="/css"><span>03</span>Css</a>
+        <div class="theme-switch-wrapper">
+          <label for="checkbox" class="theme-switch">
+            <input type="checkbox" id="checkbox">
+            <div class="slider round"></div>
+          </label>
+        </div>
       </nav>
     </header>  <h1 class="padding-top-4 front">Css learnings, no way</h1>
-  <p class="h5 excerpt">CSS steht für Cascading Style Sheets, was übersetzt „gestufte Stilvorlagen“ bedeutet. Es ist eine Gestaltungssprache, mit der das Aussehen von HTML Dokumenten bestimmt werden kann.</p>
+  <p class="h5 excerpt color-excerpt">CSS steht für Cascading Style Sheets, was übersetzt „gestufte Stilvorlagen“ bedeutet. Es ist eine Gestaltungssprache, mit der das Aussehen von HTML Dokumenten bestimmt werden kann.</p>
   <main class="">
     
   </main>
@@ -33,6 +39,28 @@
                 list[current].className = 'menu-btn active';    
             };
         };
+
+        const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+        const currentTheme = localStorage.getItem('theme');
+
+        if (currentTheme) {
+            document.documentElement.setAttribute('data-theme', currentTheme);
+            if (currentTheme === 'dark') {
+                toggleSwitch.checked = true;
+            }
+        }
+
+        function switchTheme(e) {
+            if (e.target.checked) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+            }
+            else {
+                document.documentElement.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+            }
+        }
+        toggleSwitch.addEventListener('change', switchTheme, false);
     </script>
     </body>
 </html>	

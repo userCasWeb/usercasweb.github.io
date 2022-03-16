@@ -11,6 +11,13 @@
   color: var(--color-base);
   font-weight: bold;
 }
+.color-link {
+  color: var(--color-titel);
+}
+
+.color-excerpt {
+  color: var(--color-excerpt);
+}
 .pad-top-0 {
   padding-top: 0;
 }
@@ -31,6 +38,7 @@
   font-size: var(--clamp);
   font-weight: var(--font-bold);
   padding-bottom: 0.35rem;
+  color: var(--color-text-h);
 }
 
 header {

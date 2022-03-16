@@ -1,15 +1,15 @@
 {{>header }}
   <h1 class="padding-top-4 front">{{ title }}</h1>
-  <p class="h5 excerpt">{{ excerpt }}</p>
+  <p class="h5 excerpt color-excerpt">{{ excerpt }}</p>
   <main class="">
     {{{ contents }}}
     {{#if collections.javascript }}
       <ul class="grid-2">
       {{#each collections.javascript }}
         <li>
-          <h5><a href="/{{path}}">{{ title }}</a></h5>
+          <h5 class="color-link"><a href="/{{path}}">{{ title }}</a></h5>
           <span class="dateTag">{{ formattedDate date }} @ {{ collections }}</span>
-          <p>{{ excerpt }}</p>
+          <p class="color-excerpt">{{ excerpt }}</p>
         </li>
       {{/each}}
       </ul>

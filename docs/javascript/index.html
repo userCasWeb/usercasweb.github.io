@@ -16,36 +16,42 @@
         <a class="menu-btn" href="/javascript"><span>01</span>Javascript</a>
         <a class="menu-btn" href="/html"><span>02</span>Html</a>
         <a class="menu-btn" href="/css"><span>03</span>Css</a>
+        <div class="theme-switch-wrapper">
+          <label for="checkbox" class="theme-switch">
+            <input type="checkbox" id="checkbox">
+            <div class="slider round"></div>
+          </label>
+        </div>
       </nav>
     </header>  <h1 class="padding-top-4 front">Javascript learnings, the good way</h1>
-  <p class="h5 excerpt">Javascript ist eine Programmiersprache, mit der die Interaktion von Nutzer auf Websites ausgewertet und Inhalte verändert werden können.</p>
+  <p class="h5 excerpt color-excerpt">Javascript ist eine Programmiersprache, mit der die Interaktion von Nutzer auf Websites ausgewertet und Inhalte verändert werden können.</p>
   <main class="">
     
       <ul class="grid-2">
         <li>
-          <h5><a href="/javascript/einfuhrung-in-den-lambda-calculus">Einführung in den 𝜆 Lambda Calculus</a></h5>
+          <h5 class="color-link"><a href="/javascript/einfuhrung-in-den-lambda-calculus">Einführung in den 𝜆 Lambda Calculus</a></h5>
           <span class="dateTag">10.3.2020 @ javascript</span>
-          <p>Was ist der Lambda Calculus und wie muss man in lesen? Wieso ist es wichtig den Calculus zu verstehen?</p>
+          <p class="color-excerpt">Was ist der Lambda Calculus und wie muss man in lesen? Wieso ist es wichtig den Calculus zu verstehen?</p>
         </li>
         <li>
-          <h5><a href="/javascript/was-sind-eigentlich-expressions-und-statements">Was sind eigentlich Expressions und Statements?</a></h5>
+          <h5 class="color-link"><a href="/javascript/was-sind-eigentlich-expressions-und-statements">Was sind eigentlich Expressions und Statements?</a></h5>
           <span class="dateTag">9.3.2020 @ javascript</span>
-          <p>Manchmal nicht ganz trivial, unterscheidet Javascript zwischen Expressions und Statements. Ein Primer zu den Ausdrücken.</p>
+          <p class="color-excerpt">Manchmal nicht ganz trivial, unterscheidet Javascript zwischen Expressions und Statements. Ein Primer zu den Ausdrücken.</p>
         </li>
         <li>
-          <h5><a href="/javascript/ein-intro-zu-arrow-function-und-ihre-spezifikas">Ein Intro zu Arrow Function und ihre Spezifikas</a></h5>
+          <h5 class="color-link"><a href="/javascript/ein-intro-zu-arrow-function-und-ihre-spezifikas">Ein Intro zu Arrow Function und ihre Spezifikas</a></h5>
           <span class="dateTag">8.3.2020 @ javascript</span>
-          <p>Wie schreibt man eine Arrow Function und auf was sollte dabei beachtet werden, wenn diese Schreibweise der Function Definition umgesetzt wird? Ein kleines Intro.</p>
+          <p class="color-excerpt">Wie schreibt man eine Arrow Function und auf was sollte dabei beachtet werden, wenn diese Schreibweise der Function Definition umgesetzt wird? Ein kleines Intro.</p>
         </li>
         <li>
-          <h5><a href="/javascript/3-wege-eine-function-zu-definieren">3 Wege eine Function zu definieren</a></h5>
+          <h5 class="color-link"><a href="/javascript/3-wege-eine-function-zu-definieren">3 Wege eine Function zu definieren</a></h5>
           <span class="dateTag">7.3.2020 @ javascript</span>
-          <p>Welche Möglichkeiten werden unterschieden um Functions zu definieren? Mit Beispielen.</p>
+          <p class="color-excerpt">Welche Möglichkeiten werden unterschieden um Functions zu definieren? Mit Beispielen.</p>
         </li>
         <li>
-          <h5><a href="/javascript/der-aufbau-einer-function-erklart-und-visualisiert">Der Aufbau einer Function erklärt und visualisiert.</a></h5>
+          <h5 class="color-link"><a href="/javascript/der-aufbau-einer-function-erklart-und-visualisiert">Der Aufbau einer Function erklärt und visualisiert.</a></h5>
           <span class="dateTag">6.3.2020 @ javascript</span>
-          <p>Hier wird beschrieben, wie eine Function Declaration aufgebaut ist. Kann auch Stückweise auf andere Functionsdefinitionen angewandt werden.</p>
+          <p class="color-excerpt">Hier wird beschrieben, wie eine Function Declaration aufgebaut ist. Kann auch Stückweise auf andere Functionsdefinitionen angewandt werden.</p>
         </li>
       </ul>
   </main>
@@ -60,6 +66,28 @@
                 list[current].className = 'menu-btn active';    
             };
         };
+
+        const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+        const currentTheme = localStorage.getItem('theme');
+
+        if (currentTheme) {
+            document.documentElement.setAttribute('data-theme', currentTheme);
+            if (currentTheme === 'dark') {
+                toggleSwitch.checked = true;
+            }
+        }
+
+        function switchTheme(e) {
+            if (e.target.checked) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+            }
+            else {
+                document.documentElement.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+            }
+        }
+        toggleSwitch.addEventListener('change', switchTheme, false);
     </script>
     </body>
 </html>	
