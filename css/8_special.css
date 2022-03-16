@@ -11,6 +11,9 @@
   color: var(--color-base);
   font-weight: bold;
 }
+.pad-top-0 {
+  padding-top: 0;
+}
 
 .front {
   max-width: 19ch;
@@ -20,7 +23,14 @@
 }
 .excerpt {
   max-width: 43ch;
-  color: var(--color-acsent);
+}
+.dateTag {
+  display: block;
+  --min: 0.75; /* 12 */
+  --max: 1.125; /* 18 */
+  font-size: var(--clamp);
+  font-weight: var(--font-bold);
+  padding-bottom: 0.35rem;
 }
 
 header {

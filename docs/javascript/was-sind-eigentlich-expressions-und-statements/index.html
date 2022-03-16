@@ -18,7 +18,7 @@
         <a class="menu-btn" href="/css"><span>03</span>Css</a>
       </nav>
     </header>  <h1 class="center padding-top-4">Was sind eigentlich Expressions und Statements?</h1>
-  <p class="center excerpt"><span>9.3.2020 @ javascript</span></p>
+  <p class="center dateTag"><span>9.3.2020 @ javascript</span></p>
   <main class="padding-col-0-14 padding-top-2">
   <p>Expressions (Ausdrücke) und Statements (Anweisungen) sind zwei wichtige Begriffe in JavaScript. Angesichts der Häufigkeit, mit der diese beiden Begriffe zur Beschreibung von JavaScript Code verwendet werden, ist es wichtig, ihre Bedeutung und den Unterschied zwischen den beiden zu verstehen.</p>
 <h2 id="1-expression">1. Expression</h2>
@@ -46,12 +46,12 @@ i++ <span class="hljs-comment">// -&gt; increase by 1</span></code></pre>
 <span class="hljs-title">class</span></span></code></pre>
 
 <h3 id="boolean-expressions">Boolean Expressions</h3>
-<p>Expressions, die den booleschen Wert wahr oder falsch ergeben, werden als Boolean Expressions betrachtet. Bei boolen Expressions werden häufig logische Operatoren wie &amp;&amp;, || und ! verwendet. True und false sind aber auch primary expressions. Siehe weiter oben.</p>
+<p>Expressions, die den booleschen Wert wahr oder falsch ergeben, werden als Boolean Expressions betrachtet. Bei boolen Expressions werden häufig logische Operatoren wie <code>&amp;&amp;</code>, <code>||</code> und <code>!</code> verwendet. <code>true</code> und <code>false</code> sind aber auch primary expressions. Siehe weiter oben.</p>
 <pre><code class="hljs js"><span class="hljs-number">1</span> &gt; <span class="hljs-number">2</span> <span class="hljs-comment">// -&gt; evaluates to false</span>
 <span class="hljs-number">35</span> &lt; <span class="hljs-number">48</span> <span class="hljs-comment">// -&gt; evaluates to true</span></code></pre>
 
 <h3 id="assignement-expressions">Assignement Expressions</h3>
-<p>Wenn Expressions den = Operator verwenden, um einer Variablen einen Wert zuzuweisen, wird dies als Assignment Expressions (Zuweisungsausdruck) bezeichnet. </p>
+<p>Wenn Expressions den <code>=</code> Operator verwenden, um einer Variablen einen Wert zuzuweisen, wird dies als Assignment Expressions (Zuweisungsausdruck) bezeichnet. </p>
 <pre><code class="hljs js">age = <span class="hljs-number">34</span>; <span class="hljs-comment">// -&gt; evaluates to 34</span>
 greet = <span class="hljs-string">`Hallo Bob!`</span>; <span class="hljs-comment">// -&gt; evaluates to Hallo Bob!</span>
 
@@ -70,7 +70,7 @@ names[<span class="hljs-number">4</span>] = <span class="hljs-string">`John`</sp
 <h2 id="2-statements">2. Statements</h2>
 <p>Ein Statement ist eine Anweisung, eine bestimmte Aktion auszuführen. Solche Aktionen umfassen das Erstellen einer Variablen oder einer Funktion, das Durchlaufen eines Arrays von Elementen, das Auswerten von Code basierend auf einer bestimmten Bedingung usw. JavaScript-Programme sind eigentlich eine Folge von Anweisungen. Auch Statements können unterteilt werden.</p>
 <h3 id="declaration-statements">Declaration Statements</h3>
-<p>Zu diesen Statements gehören die Definition von Variables und Functions. Diese sind var, const, let und function. Diese Statements können an anderen Stellen im Programm verwendet werden. Man weist diesen auch Werte zu.  </p>
+<p>Zu diesen Statements gehören die Definition von Variables und Functions. Diese sind <code>var</code>, <code>const</code>, <code>let</code> und <code>function</code>. Diese Statements können an anderen Stellen im Programm verwendet werden. Man weist diesen auch Werte zu.  </p>
 <pre><code class="hljs js"><span class="hljs-keyword">let</span> square; <span class="hljs-comment">// -&gt; let declares square</span>
 <span class="hljs-keyword">const</span> name; <span class="hljs-comment">// -&gt; const declares name</span>
 
@@ -91,7 +91,7 @@ names[<span class="hljs-number">4</span>] = <span class="hljs-string">`John`</sp
 <span class="hljs-comment">// -&gt; err, const a is a declared statement, but an expression was expected</span></code></pre>
 
 <h3 id="conditional-statements">Conditional Statements</h3>
-<p>Eine bedingte Anweisung ist ein beliebiger Code, der verwendet wird, um die Voraussetzungen anzugeben, die erforderlich sind, damit der Computer bestimmte Aktionen ausführen kann. Die vier Arten von bedingten Anweisungen in JavaScript sind if, else, else if und switch. Sie bestimmen den Kontrollfluss im Programmm.</p>
+<p>Eine bedingte Anweisung ist ein beliebiger Code, der verwendet wird, um die Voraussetzungen anzugeben, die erforderlich sind, damit der Computer bestimmte Aktionen ausführen kann. Die vier Arten von bedingten Anweisungen in JavaScript sind <code>if</code>, <code>else</code>, <code>else if</code> und <code>switch</code>. Sie bestimmen den Kontrollfluss im Programmm.</p>
 <pre><code class="hljs js"><span class="hljs-keyword">if</span> ( <span class="hljs-number">12</span> &lt; <span class="hljs-number">56</span> ) {
   <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`12 is smaler than 56`</span>);
   } <span class="hljs-keyword">else</span> {
@@ -100,7 +100,7 @@ names[<span class="hljs-number">4</span>] = <span class="hljs-string">`John`</sp
 <span class="hljs-comment">// -&gt; 12 ist smaler than 56</span></code></pre>
 
 <h3 id="loops-and-jumps">Loops and Jumps</h3>
-<p>Looping Statements umfassen folgende Anweisungen: while, do/while, for und for/in. Jump Statements werden verwendet, um den JavaScript-Interpreter an eine bestimmte Stelle innerhalb des Programms springen zu lassen. Beispiele für Jump Statements sind unter anderem Break, Continue, Return und Throw.</p>
+<p>Looping Statements umfassen folgende Anweisungen: <code>while</code>, <code>do while</code>, <code>for</code> und <code>for in</code>. Jump Statements werden verwendet, um den JavaScript-Interpreter an eine bestimmte Stelle innerhalb des Programms springen zu lassen. Beispiele für Jump Statements sind unter anderem <code>break</code>, <code>continue</code>, <code>return</code> und <code>throw</code>.</p>
 <pre><code class="hljs js"><span class="hljs-keyword">let</span> timer = <span class="hljs-number">1</span>;
 
 <span class="hljs-keyword">while</span> (timer &lt; <span class="hljs-number">5</span>) {

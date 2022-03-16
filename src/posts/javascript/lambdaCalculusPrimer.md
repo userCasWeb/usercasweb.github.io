@@ -25,7 +25,7 @@ Gruppe    := (Ausdrücke)
 
 ## 1. Schema Funktionsdefinition
 
-Eine Funktin wird definiert durch das Zeichen 𝜆 mit einer Variablen, danach ein Punkt, gefolgt von einem Ausdruck. Wenn wir nun das Beispiel der Identitätsfunktion nehmen, 𝜆a.a, dann lesen wir heraus, dass dies eine Funktion ist, da sie mit 𝜆 anfängt. Diese Funktion hat eine Variable. Danach folgt der Ausdruck der sagt, was mit dieser Variable angefangen werden soll. In diesem Fall wird einfach das zurückgegeben was als Variable eingegeben wird. Jede Funktion kann nur eine Variable haben, nicht mehrere. 𝜆ab.a ist zwar eine gültige Schreibweise, heisst aber nicht, dass es 2 Variablen a und b hat sondern ist eine gekürzte Schreibweise für 𝜆a.𝜆b.a was wiederum mit Klammern geschrieben werden kann 𝜆a.(𝜆b.a). Das heisst dass die Funktion 𝜆a den Ausdruck 𝜆b.a ausführen soll. Dieser Ausdruck besteht wiederum aus einer Funktion welche die Variable b hat und den Ausdruck a entgegenimmt. 
+Eine Funktin wird definiert durch das Zeichen 𝜆 mit einer Variablen, danach ein Punkt, gefolgt von einem Ausdruck. Wenn wir nun das Beispiel der Identitätsfunktion nehmen, `𝜆a.a`, dann lesen wir heraus, dass dies eine Funktion ist, da sie mit `𝜆` anfängt. Diese Funktion hat eine Variable. Danach folgt der Ausdruck der sagt, was mit dieser Variable angefangen werden soll. In diesem Fall wird einfach das zurückgegeben was als Variable eingegeben wird. Jede Funktion kann nur eine Variable haben, nicht mehrere. `𝜆ab.a` ist zwar eine gültige Schreibweise, heisst aber nicht, dass es 2 Variablen `a` und `b` hat sondern ist eine gekürzte Schreibweise für `𝜆a.𝜆b.a` was wiederum mit Klammern geschrieben werden kann `𝜆a.(𝜆b.a)`. Das heisst dass die Funktion 𝜆a den Ausdruck `𝜆b.a` ausführen soll. Dieser Ausdruck besteht wiederum aus einer Funktion welche die Variable `b` hat und den Ausdruck `a` entgegenimmt. 
 
 Die Übersetzung in Javascript sieht so aus, dass wir dazu die Fat Arrow Function dazu nehmen. Unten sei gleich mal wieder die Identitätsfunktion wieder gegeben, als 𝜆 Calculus und als Javascript Funktion. Das 𝜆 Zeichen ist in JS die Fat Arrow. Das erste a in 𝜆 Calculus ist in JS das erste x, also der Parameter. Der Punkt im 𝜆 Calculus leitet in JS den Function Body ein. Und das letzte a ist dann das Statement oder Expression in JS.
 
@@ -61,7 +61,7 @@ Dieses Vorgehen muss genauer noch angeschaut werden, weil nur wirklich gleiche A
 
 ### 𝛽-Reduktion
 
-Diese Reduktion zielt darauf ab, die Funktion anzuwenden und so den Ausdruck zu vereinfachen. Man nimmt das erste Argument und setzt ihn in der Funktion auf der linken Seite ein. I ist das erste Argument und wird für den ersten Parameter f eingesetzt. Dadurch entfällt das erste f auf der linken Seite und wird im Function Body ersetzt durch I. Das gleiche wird weiter forgeführt mit dem Argument 1. Erster Parameter x wird gestrichen und im Function Body ersetzt durch 1. Da I die Idenditäts-Funktion ist, schreibt man diese aus, also x => x. Danach wird der Paramter x wieder gestrichen und ersetzt mit einer 1.
+Diese Reduktion zielt darauf ab, die Funktion anzuwenden und so den Ausdruck zu vereinfachen. Man nimmt das erste Argument und setzt ihn in der Funktion auf der linken Seite ein. `(I)` ist das erste Argument und wird für den ersten Parameter `f` eingesetzt. Dadurch entfällt das erste `f` auf der linken Seite und wird im Function Body ersetzt durch `(I)`. Das gleiche wird weiter forgeführt mit dem Argument `(1)`. Erster Parameter `(x)` wird gestrichen und im Function Body ersetzt durch `(1)`. Da `(I)` die Idenditäts-Funktion ist, schreibt man diese aus, also `x => x`. Danach wird der Paramter `(x)` wieder gestrichen und ersetzt mit einer `(1)`.
 
 ```js
 ( f =>  x =>  f   (x) ) (I)  (1);
@@ -71,11 +71,11 @@ Diese Reduktion zielt darauf ab, die Funktion anzuwenden und so den Ausdruck zu 
               (1);
 ```
 
-Merke, dass die 𝛽-Reduktion auf ein Function Call angewendet wird. Die 2 Argumente I und 1 sind im Curry Style geschrieben -> (I)(1) und nicht (I, 1).
+Merke, dass die 𝛽-Reduktion auf ein Function Call angewendet wird. Die 2 Argumente `(I)` und `(1)` sind im Curry Style geschrieben `// -> (I)(1)` und nicht `(I, 1)`.
 
 ### 𝜂-Reduktion
 
-Bei der 𝜂-Reduktion werden die redundanten Parameter in einer Funktion gestrichen. Das Beispiel liest sich so, nimm den letzten Parameter in dem Function Body und streiche ihn auf der linken und rechten Seite. Das wäre dann mal das y. Führe das Vorgehen mit dem jetzigem letztem Parameter wieder gleich aus. Also x. 
+Bei der 𝜂-Reduktion werden die redundanten Parameter in einer Funktion gestrichen. Das Beispiel liest sich so, nimm den letzten Parameter in dem Function Body und streiche ihn auf der linken und rechten Seite. Das wäre dann mal das `(y)`. Führe das Vorgehen mit dem jetzigem letztem Parameter wieder gleich aus. Also `(x)`. 
 
 ```js
 x => y => plus (x) (y);

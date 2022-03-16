@@ -48,7 +48,7 @@ class
 
 ### Boolean Expressions
 
-Expressions, die den booleschen Wert wahr oder falsch ergeben, werden als Boolean Expressions betrachtet. Bei boolen Expressions werden häufig logische Operatoren wie &&, || und ! verwendet. True und false sind aber auch primary expressions. Siehe weiter oben.
+Expressions, die den booleschen Wert wahr oder falsch ergeben, werden als Boolean Expressions betrachtet. Bei boolen Expressions werden häufig logische Operatoren wie `&&`, `||` und `!` verwendet. `true` und `false` sind aber auch primary expressions. Siehe weiter oben.
 
 ```js
 1 > 2 // -> evaluates to false
@@ -57,7 +57,7 @@ Expressions, die den booleschen Wert wahr oder falsch ergeben, werden als Boolea
 
 ### Assignement Expressions
 
-Wenn Expressions den = Operator verwenden, um einer Variablen einen Wert zuzuweisen, wird dies als Assignment Expressions (Zuweisungsausdruck) bezeichnet. 
+Wenn Expressions den `=` Operator verwenden, um einer Variablen einen Wert zuzuweisen, wird dies als Assignment Expressions (Zuweisungsausdruck) bezeichnet. 
 
 ```js
 age = 34; // -> evaluates to 34
@@ -86,7 +86,7 @@ Ein Statement ist eine Anweisung, eine bestimmte Aktion auszuführen. Solche Akt
 
 ### Declaration Statements
 
-Zu diesen Statements gehören die Definition von Variables und Functions. Diese sind var, const, let und function. Diese Statements können an anderen Stellen im Programm verwendet werden. Man weist diesen auch Werte zu.  
+Zu diesen Statements gehören die Definition von Variables und Functions. Diese sind `var`, `const`, `let` und `function`. Diese Statements können an anderen Stellen im Programm verwendet werden. Man weist diesen auch Werte zu.  
 
 ```js
 let square; // -> let declares square
@@ -115,7 +115,7 @@ console.log( const a );
 
 ### Conditional Statements
 
-Eine bedingte Anweisung ist ein beliebiger Code, der verwendet wird, um die Voraussetzungen anzugeben, die erforderlich sind, damit der Computer bestimmte Aktionen ausführen kann. Die vier Arten von bedingten Anweisungen in JavaScript sind if, else, else if und switch. Sie bestimmen den Kontrollfluss im Programmm.
+Eine bedingte Anweisung ist ein beliebiger Code, der verwendet wird, um die Voraussetzungen anzugeben, die erforderlich sind, damit der Computer bestimmte Aktionen ausführen kann. Die vier Arten von bedingten Anweisungen in JavaScript sind `if`, `else`, `else if` und `switch`. Sie bestimmen den Kontrollfluss im Programmm.
 
 ```js
 if ( 12 < 56 ) {
@@ -128,7 +128,7 @@ if ( 12 < 56 ) {
 
 ### Loops and Jumps
 
-Looping Statements umfassen folgende Anweisungen: while, do/while, for und for/in. Jump Statements werden verwendet, um den JavaScript-Interpreter an eine bestimmte Stelle innerhalb des Programms springen zu lassen. Beispiele für Jump Statements sind unter anderem Break, Continue, Return und Throw.
+Looping Statements umfassen folgende Anweisungen: `while`, `do while`, `for` und `for in`. Jump Statements werden verwendet, um den JavaScript-Interpreter an eine bestimmte Stelle innerhalb des Programms springen zu lassen. Beispiele für Jump Statements sind unter anderem `break`, `continue`, `return` und `throw`.
 
 ```js
 let timer = 1;

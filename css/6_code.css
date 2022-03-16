@@ -1,5 +1,19 @@
 /*** code.css ***/
 
+code:not(pre code) {
+	display: inline-block;
+	--min: 0.75;
+	--max: 1.125;
+	font-size: var(--clamp);
+	font-family: var(--font-mono);
+	background-color: #fffbfcee;
+  border: .1rem solid var(--color-text);
+	border-radius: 0.25rem;
+	padding: 0 0.5rem;
+  margin: 0 0.25rem;
+}
+
+
 pre code {
   display: block;
   white-space: pre;

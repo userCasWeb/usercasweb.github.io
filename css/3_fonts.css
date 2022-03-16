@@ -7,7 +7,7 @@ body {
   font-size: var(--clamp);
   color: var(--color-text);
   font-family: var(--font-sans-serif);
-  font-weight: var(--font-light);
+  font-weight: var(--font-normal);
   font-style: normal;
   line-height: var(--lh-base);
   -moz-hyphens: auto;
@@ -28,6 +28,7 @@ h4,
 h5 {
   font-family: var(--font-serif);
   font-weight: var(--font-normal);
+  color: var(--color-text-h);
   line-height: var(--lh-h);
   margin-bottom: calc(var(--lh-h) * 0.4em);
   padding-top: calc(var(--lh-h) * 1em);;
@@ -44,7 +45,7 @@ h1,
 h2,
 .h2 {
   --min: 2; /* 32 */
-  --max: 4.8; /* 76.8 */
+  --max: 4.2; /* 67.2 */
 
   font-size: var(--clamp);
 }
@@ -52,7 +53,7 @@ h2,
 h3,
 .h3 {
   --min: 1.6; /* 25.6 */
-  --max: 3.84; /* 61.4 */
+  --max: 3.5; /* 56 */
 
   font-size: var(--clamp);
 }
@@ -60,7 +61,7 @@ h3,
 h4,
 .h4 {
   --min: 1.28; /* 20.5 */
-  --max: 3.07; /* 49,1 */
+  --max: 2.8; /* 44.8 */
 
   font-size: var(--clamp);
 }
@@ -68,7 +69,7 @@ h4,
 h5,
 .h5 {
   --min: 1.18; /* 18.9 */
-  --max: 2.25; /* 36.0 */
+  --max: 2.0; /* 32.0 */
 
   font-size: var(--clamp);
 }
@@ -95,7 +96,13 @@ h5,
   margin-right: auto;
 }
 
-strong {
-  font-weight: bold;
-  color: var(--color-base);
+strong,
+.strong {
+  font-weight: var(--font-bold);
+}
+
+.small {
+  --min: 0.75; /* 12 */
+  --max: 1.125; /* 18 */
+  font-size: var(--clamp);
 }

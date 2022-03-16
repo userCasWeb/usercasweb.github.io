@@ -11,10 +11,11 @@
   --font-heavy: 700;
 
   /* Colors */
-  --color-background: #010b14;
-  --color-text: #edf7ff;
-  --color-base: #86B3D1;
-  --color-acsent: #A16E83;
+  --color-background: #FFFBFC; /* #010b14 */
+  --color-text: #606060; /* #edf7ff */
+  --color-text-h: #001829; 
+  --color-base: #c792ea; /* #86b3D1 */
+  --color-acsent: #c792ea; /* #A16E83 */
   --color-success: #80b912;
   --color-error: #f05230;
   --color-border: #ddd;

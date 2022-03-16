@@ -18,24 +18,24 @@
         <a class="menu-btn" href="/css"><span>03</span>Css</a>
       </nav>
     </header>  <h1 class="center padding-top-4">3 Wege eine Function zu definieren</h1>
-  <p class="center excerpt"><span>7.3.2020 @ javascript</span></p>
+  <p class="center dateTag"><span>7.3.2020 @ javascript</span></p>
   <main class="padding-col-0-14 padding-top-2">
   <p>Um eine Function zu definieren gibt es in Javascript 3 grundsätzliche verschiedene Möglichkeiten. Je nach Situation und Preferenz eignet sich die eine Art besser oder schlechter. Dann wird noch kurz das Return Statement angeschaut und am Schluss noch kurz die Arguments.</p>
 <h2 id="1-function-definition">1. Function Definition</h2>
 <h3 id="function-declaration">Function Declaration</h3>
-<p>Die erste Möglichkeit besteht darin, mit dem Keyword <strong>function</strong> die Function zu deklarieren. So als würde man eine Variable mit dem Keyword <strong>var</strong> deklarieren. Dabei geben wir der Function einen Namen. Im Beispiel unten ist es &quot;square&quot;. </p>
+<p>Die erste Möglichkeit besteht darin, mit dem Keyword <code>function</code> die Function zu deklarieren. So als würde man eine Variable mit dem Keyword <code>var</code> deklarieren. Dabei geben wir der Function einen Namen. Im Beispiel unten ist es <code>square</code>. </p>
 <pre><code class="hljs js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">square</span>(<span class="hljs-params">x</span>) </span>{
   <span class="hljs-keyword">return</span> x * x;
 }</code></pre>
 
 <h3 id="function-expression">Function Expression</h3>
-<p>Als zweitens kann die Function als <strong>Expression</strong> definieren werden. Dabei wird einer Variablen gleich die Function angehängt oder bestimmt. Wir geben aber der Function keinen Namen. Sonder speichern diese in einer Variablen, in diesem Fall auch &quot;square&quot;.</p>
+<p>Als zweitens kann die Function als <strong>Expression</strong> definieren werden. Dabei wird einer Variablen gleich die Function angehängt oder bestimmt. Wir geben aber der Function keinen Namen. Sonder speichern diese in einer Variablen, in diesem Fall auch <code>square</code>.</p>
 <pre><code class="hljs js"><span class="hljs-keyword">const</span> square = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">x</span>) </span>{
   <span class="hljs-keyword">return</span> x * x;
 }</code></pre>
 
 <h3 id="arrow-function-expression">Arrow Function Expression</h3>
-<p>Neu kann eine Function auch mit einem <strong>=&gt;</strong> (gleich grösser Zeichen) definiert werden. Dieses Zeichen nennt man auch <strong>Fat Arrow</strong>. Manchmal wird diese Function auch Fat Arrow Function genannt. Es ist das gleiche Prinzip wie bei der Function Expression nur, dass das Keyword &quot;function&quot; weggelassen werden kann und die Paratemer vor der Fat Arrow geschrieben wird. </p>
+<p>Neu kann eine Function auch mit einem <code>=&gt;</code> (gleich grösser Zeichen) definiert werden. Dieses Zeichen nennt man auch <strong>Fat Arrow</strong>. Manchmal wird diese Function auch Fat Arrow Function genannt. Es ist das gleiche Prinzip wie bei der Function Expression nur, dass das Keyword <code>function</code> weggelassen werden kann und die Paratemer vor der Fat Arrow geschrieben wird. </p>
 <pre><code class="hljs js"><span class="hljs-keyword">const</span> square = <span class="hljs-function">(<span class="hljs-params">x</span>) =&gt;</span> {
   <span class="hljs-keyword">return</span> x * x;
 }</code></pre>
@@ -47,7 +47,7 @@
 }
 square(<span class="hljs-number">9</span>); <span class="hljs-comment">// -&gt; undefined</span></code></pre>
 
-<p>Mit dem Aufruf des Function Name <strong>square</strong> wird die Function selber zurückgegeben. Man gibt keine Argumente mit. </p>
+<p>Mit dem Aufruf des Function Name <code>square</code> ohne Klammern <code>()</code> wird die Function selber zurückgegeben. Man gibt keine Argumente mit. </p>
 <pre><code class="hljs js"><span class="hljs-comment">// Function Declaration</span>
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">square</span>(<span class="hljs-params">x</span>) </span>{
   <span class="hljs-keyword">return</span> x * x;

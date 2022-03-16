@@ -11,7 +11,7 @@ Um eine Function zu definieren gibt es in Javascript 3 grundsätzliche verschied
 ## 1. Function Definition
 ### Function Declaration
 
-Die erste Möglichkeit besteht darin, mit dem Keyword **function** die Function zu deklarieren. So als würde man eine Variable mit dem Keyword **var** deklarieren. Dabei geben wir der Function einen Namen. Im Beispiel unten ist es "square". 
+Die erste Möglichkeit besteht darin, mit dem Keyword `function` die Function zu deklarieren. So als würde man eine Variable mit dem Keyword `var` deklarieren. Dabei geben wir der Function einen Namen. Im Beispiel unten ist es `square`. 
 
 ```js
 function square(x) {
@@ -21,7 +21,7 @@ function square(x) {
 
 ### Function Expression 
 
-Als zweitens kann die Function als **Expression** definieren werden. Dabei wird einer Variablen gleich die Function angehängt oder bestimmt. Wir geben aber der Function keinen Namen. Sonder speichern diese in einer Variablen, in diesem Fall auch "square".
+Als zweitens kann die Function als **Expression** definieren werden. Dabei wird einer Variablen gleich die Function angehängt oder bestimmt. Wir geben aber der Function keinen Namen. Sonder speichern diese in einer Variablen, in diesem Fall auch `square`.
 
 ```js
 const square = function(x) {
@@ -31,7 +31,7 @@ const square = function(x) {
 
 ### Arrow Function Expression
 
-Neu kann eine Function auch mit einem **=>** (gleich grösser Zeichen) definiert werden. Dieses Zeichen nennt man auch **Fat Arrow**. Manchmal wird diese Function auch Fat Arrow Function genannt. Es ist das gleiche Prinzip wie bei der Function Expression nur, dass das Keyword "function" weggelassen werden kann und die Paratemer vor der Fat Arrow geschrieben wird. 
+Neu kann eine Function auch mit einem `=>` (gleich grösser Zeichen) definiert werden. Dieses Zeichen nennt man auch **Fat Arrow**. Manchmal wird diese Function auch Fat Arrow Function genannt. Es ist das gleiche Prinzip wie bei der Function Expression nur, dass das Keyword `function` weggelassen werden kann und die Paratemer vor der Fat Arrow geschrieben wird. 
 
 ```js
 const square = (x) => {
@@ -50,7 +50,7 @@ function square(x) {
 square(9); // -> undefined
 ```
 
-Mit dem Aufruf des Function Name **square** wird die Function selber zurückgegeben. Man gibt keine Argumente mit. 
+Mit dem Aufruf des Function Name `square` ohne Klammern `()` wird die Function selber zurückgegeben. Man gibt keine Argumente mit. 
 
 ```js
 // Function Declaration
