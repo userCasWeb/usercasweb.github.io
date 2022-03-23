@@ -26,7 +26,7 @@ const square = (x) => { return x * x; }
 const square = x => x * x;
 ```
 
-Bei der letzten Schreibweise wurden die Klammer für den Parameter weggelassen. Die geschweiften Klammern können auch weggelassen werden, wenn nur ein Statement oder eine Expression folgt. Sollten aber 2 Parameter übergeben werden, dann sind die Klammern wieder nötig. Ebenfalls nötig sind die Klammern wenn gar kein Paramateer bestimmt wird. 
+Bei der letzten Schreibweise wurden die Klammern für den Parameter weggelassen. Die geschweiften Klammern können auch weggelassen werden, wenn nur ein Statement oder eine Expression folgt. Sollten aber 2 Parameter übergeben werden, dann sind die Klammern wieder nötig. Ebenfalls nötig sind die Klammern wenn gar kein Paramateer bestimmt wird. 
 
 ```js
 // with 2 parameters

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebAppDev</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+  </head>
+  <body class="container">
+    <header>
+      <a class="s-logo" href="/">WebAppDev</a>
+      <nav class="navi">
+        <a class="menu-btn" href="/javascript"><span>01</span>Javascript</a>
+        <a class="menu-btn" href="/html"><span>02</span>Html</a>
+        <a class="menu-btn" href="/css"><span>03</span>Css</a>
+        <div class="theme-switch-wrapper">
+          <label for="checkbox" class="theme-switch">
+            <input type="checkbox" id="checkbox">
+            <div class="slider round"></div>
+          </label>
+        </div>
+      </nav>
+    </header>  <h1 class="center padding-top-4">Lambda (𝜆) Expressions</h1>
+  <p class="center dateTag"><span>14.3.2020 @ javascript</span></p>
+  <main class="padding-col-0-14 padding-top-2">
+  <p>Lambda Expressions sind sehr wichtig für eine Programmiersprache, die Funktionen erster Klasse unterstützt, was im Grunde bedeutet, dass Funktionen als Argumente an andere Funktionen übergeben oder Variablen zugewiesen werden können. </p>
+<p>In JavaScript kann alles wie ein Objekt behandelt werden, d. h. eine Funktion kann als Parameter an eine andere Funktion gesendet und auch als Rückgabewert von der aufgerufenen Funktion zurückgegeben werden.</p>
+<p>Wir fangen mit den einfachen Ausdrücken an und erarbeiten aufbauend so weitere Lambda Expressions.</p>
+<h2 id="identity">Identity</h2>
+<p>Diese Funktion gibt ihre eigene Identität aus. Der Lambda Ausdruck ist <code>𝜆a.a</code>.</p>
+<pre><code class="hljs js"><span class="hljs-keyword">const</span> I = <span class="hljs-function"><span class="hljs-params">x</span> =&gt;</span> x; 
+
+<span class="hljs-comment">// Example</span>
+I(<span class="hljs-number">5</span>) === <span class="hljs-number">5</span>; <span class="hljs-comment">// -&gt; true</span></code></pre>
+
+<h2 id="mockingbird">Mockingbird</h2>
+<p>Gibt die eigene Funktion wieder. Der Lambda Ausdruck ist <code>𝜆f.ff := 𝜆f.𝜆f.f</code>. Achtung <code>M(M)</code> ergibt stack overflow.</p>
+<pre><code class="hljs js"><span class="hljs-keyword">const</span> M = <span class="hljs-function"><span class="hljs-params">f</span> =&gt;</span> f(f);
+
+<span class="hljs-comment">// Example</span>
+M(I) === I; <span class="hljs-comment">// -&gt; true</span></code></pre>
+
+<h2 id="kestrel">Kestrel</h2>
+<p>Eine Funktion welche den ersten Parameter zurückgibt. Der Lambda Ausdruck ist <code>𝜆ab.a</code>. Wird auch verwendet um boolen True zurückzugeben. </p>
+<pre><code class="hljs js"><span class="hljs-keyword">const</span> K = <span class="hljs-function"><span class="hljs-params">x</span> =&gt;</span> <span class="hljs-function"><span class="hljs-params">y</span> =&gt;</span> x; <span class="hljs-comment">// -&gt; Kestrel</span>
+<span class="hljs-keyword">const</span> T = K; <span class="hljs-comment">// -&gt; True</span>
+
+<span class="hljs-comment">// Example</span>
+K(<span class="hljs-number">6</span>)(<span class="hljs-number">98</span>) === <span class="hljs-number">6</span>; <span class="hljs-comment">// -&gt; true</span></code></pre>
+
+<h2 id="kite">Kite</h2>
+<p>Diese Funktion gibt den zweiten Paramter zurück. Der Lambda Ausdruck ist <code>𝜆ab.b</code>. Wird im Gegensatz zu Kestrel verwendet für boolen False. </p>
+<pre><code class="hljs js"><span class="hljs-keyword">const</span> KI = <span class="hljs-function"><span class="hljs-params">x</span> =&gt;</span> <span class="hljs-function"><span class="hljs-params">y</span> =&gt;</span> y; <span class="hljs-comment">// -&gt; Kite</span>
+<span class="hljs-keyword">const</span> F = KI; <span class="hljs-comment">// -&gt; False</span>
+
+<span class="hljs-comment">// Example</span>
+K(<span class="hljs-number">6</span>)(<span class="hljs-number">98</span>) === <span class="hljs-number">98</span>; <span class="hljs-comment">// -&gt; true</span></code></pre>
+
+<h2 id="cardinal">Cardinal</h2>
+<p>Kehrt die 2 Parameter <code>x</code> und <code>y</code> um und wendet die Funktion <code>f</code> auf sie an. Der Lambda Ausdruck ist <code>𝜆fab.fba</code>.</p>
+<pre><code class="hljs js"><span class="hljs-keyword">const</span> C = <span class="hljs-function"><span class="hljs-params">f</span> =&gt;</span> <span class="hljs-function"><span class="hljs-params">x</span> =&gt;</span> <span class="hljs-function"><span class="hljs-params">y</span> =&gt;</span> f(y)(x);
+
+<span class="hljs-comment">// Example</span>
+C(K)(<span class="hljs-number">2</span>)(<span class="hljs-number">6</span>) === <span class="hljs-number">6</span>; <span class="hljs-comment">// -&gt; true</span>
+<span class="hljs-comment">// -&gt; C := Cardinal flips arg -&gt; C(K)(6)(2)</span>
+<span class="hljs-comment">// -&gt; K := Kestrel returns first arg -&gt; (6)</span></code></pre>
+
+<h2 id="vireo--pair">Vireo / Pair</h2>
+<p>Pair nimmt zwei beliebige Werte, <code>a</code> und <code>b</code>, und gibt eine Funktion (&quot;das Paar&quot;) zurück, die über diese Werte schließt. Wenn das Paar mit einem Endargument <code>f</code> gefüttert wird, wird <code>f</code> auf <code>a</code> und <code>b</code> angewandt. Unser Paar kann also <code>a</code> und <code>b</code> in dieser Reihenfolge an jede binäre Funktion liefern. Der Lambda Ausdruck ist <code>λxyf.fxy</code>.</p>
+<p>Dieser Kombinator ist sehr interessant, da wir ihn in Kombination mit den Kombinatoren Kestrel und Kite verwenden können, um eine 2-Tupel- oder Paar-Datenstruktur zu erstellen.</p>
+<pre><code class="hljs js"><span class="hljs-keyword">const</span> pair = <span class="hljs-function"><span class="hljs-params">x</span> =&gt;</span> <span class="hljs-function"><span class="hljs-params">y</span> =&gt;</span> <span class="hljs-function"><span class="hljs-params">f</span> =&gt;</span> f(x)(y);
+
+<span class="hljs-comment">// Example</span>
+pair(<span class="hljs-number">6</span>)(<span class="hljs-number">19</span>); <span class="hljs-comment">// -&gt; f =&gt; f(x)(y)</span>
+pair(<span class="hljs-number">6</span>)(<span class="hljs-number">19</span>)(K) === <span class="hljs-number">6</span>; <span class="hljs-comment">// -&gt; true K := Kestrel returns first param</span>
+pair(<span class="hljs-number">6</span>)(<span class="hljs-number">19</span>)(KI) === <span class="hljs-number">19</span>; <span class="hljs-comment">// -&gt; true KI := Kite returns second param</span></code></pre>
+
+<h2 id="first-value-of-a-pair">First Value of a Pair</h2>
+<p>In zusammenhang mit Vireo / Pair gibt dieser Ausdruck den ersten Wert von zweien zurück. Der Lambda Ausdruck ist <code>𝜆p.pK</code>. Wobei <code>p</code> für die obere Funktion <code>pair</code> steht. Es ist eigentlich wie schon in <code>pair</code> beschrieben einfach mit der Anwendung der Funktion. Sie ist auch ein bisschen anderst geschrieben. Das Resultat ist das gleiche.</p>
+<pre><code class="hljs js"><span class="hljs-keyword">const</span> fst = <span class="hljs-function"><span class="hljs-params">p</span> =&gt;</span> p(K);
+
+<span class="hljs-comment">// Example</span>
+<span class="hljs-keyword">const</span> name = pair(<span class="hljs-string">"first"</span>)(<span class="hljs-string">"second"</span>);
+fst(name) === <span class="hljs-string">"first"</span>; <span class="hljs-comment">// -&gt; true</span>
+
+fst(pair(<span class="hljs-string">"first"</span>)(<span class="hljs-string">"second"</span>)) === <span class="hljs-string">"first"</span> <span class="hljs-comment">// -&gt; true</span></code></pre>
+
+<h2 id="second-value-of-a-pair">Second Value of a Pair</h2>
+<p>Dies ist das gleich wie First Value of a Pair ausser das der zweite Wert von zweien zurück gegeben wird. Der Lambda Ausdruck ist <code>𝜆p.pKI</code>.</p>
+<pre><code class="hljs js"><span class="hljs-keyword">const</span> snd = <span class="hljs-function"><span class="hljs-params">p</span> =&gt;</span> p(KI);
+
+<span class="hljs-comment">// Example</span>
+<span class="hljs-keyword">const</span> name = pair(<span class="hljs-string">"first"</span>)(<span class="hljs-string">"second"</span>);
+snd(name) === <span class="hljs-string">"second"</span>; <span class="hljs-comment">// -&gt; true</span>
+
+snd(pair(<span class="hljs-string">"first"</span>)(<span class="hljs-string">"second"</span>)) === <span class="hljs-string">"second"</span> <span class="hljs-comment">// -&gt; true</span></code></pre>
+
+<h2 id="pair-encoding">Pair Encoding</h2>
+<p>Hier wird ein Beispiel aufgezeigt, wie man mit <code>pair</code> arbeiten kann. Sei gesagt, dass die Daten immutable (unveränderbar) sind. <code>person</code> nimmt 3 Parameter auf, <code>firstname</code>, <code>lastname</code>und <code>age</code>. Diese 3 Paramter werden der Funktion <code>pair</code> übergeben, mit nochmals verschachteltem <code>pair</code>. Erstes <code>pair</code>ist <code>pair()()</code>, zweites <code>pair</code> ist im ersten Klammerausdruck, dort auch wieder mit <code>pair()()</code>. Das ergibt das Konstrukt <code>pair(pair()())()</code>.</p>
+<pre><code class="hljs js"><span class="hljs-keyword">const</span> person = 
+  <span class="hljs-function"><span class="hljs-params">firstname</span> =&gt;</span> 
+  <span class="hljs-function"><span class="hljs-params">lastname</span> =&gt;</span> 
+  <span class="hljs-function"><span class="hljs-params">age</span> =&gt;</span> 
+  pair(pair(firstname)(lastname))(age);
+
+<span class="hljs-keyword">const</span> firstn = <span class="hljs-function"><span class="hljs-params">p</span> =&gt;</span> fst(fst(p)); 
+<span class="hljs-keyword">const</span> lastn = <span class="hljs-function"><span class="hljs-params">p</span> =&gt;</span> snd(fst(p)); 
+<span class="hljs-keyword">const</span> age = <span class="hljs-function"><span class="hljs-params">p</span> =&gt;</span> snd(p);
+
+firstn(person(<span class="hljs-string">"John"</span>)(<span class="hljs-string">"Smith"</span>)(<span class="hljs-number">54</span>)); <span class="hljs-comment">// -&gt; John</span>
+lastn(person(<span class="hljs-string">"John"</span>)(<span class="hljs-string">"Smith"</span>)(<span class="hljs-number">54</span>)); <span class="hljs-comment">// -&gt; Smith</span>
+age(person(<span class="hljs-string">"John"</span>)(<span class="hljs-string">"Smith"</span>)(<span class="hljs-number">54</span>)); <span class="hljs-comment">// -&gt; 54</span></code></pre>
+  </main>
+    <script>
+        const list = document.getElementsByClassName('menu-btn');
+        const domain = window.location.protocol + '//' + window.location.host;
+        const adress = window.location.href.replace(domain,'');
+        let current = 0;
+        for (let i = 0; i < list.length; i++) {
+            if (adress.search(list[i].getAttribute('href')) === 0) {
+                current = i;
+                list[current].className = 'menu-btn active';    
+            };
+        };
+
+        const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+        const currentTheme = localStorage.getItem('theme');
+
+        if (currentTheme) {
+            document.documentElement.setAttribute('data-theme', currentTheme);
+            if (currentTheme === 'dark') {
+                toggleSwitch.checked = true;
+            }
+        }
+
+        function switchTheme(e) {
+            if (e.target.checked) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+            }
+            else {
+                document.documentElement.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+            }
+        }
+        toggleSwitch.addEventListener('change', switchTheme, false);
+    </script>
+    </body>
+</html>	

@@ -1,4 +1,11 @@
 /*** code.css ***/
+*::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera*/
+}
+* {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
 
 code:not(pre code) {
 	display: inline-block;
@@ -17,8 +24,8 @@ code:not(pre code) {
 pre code {
   display: block;
   white-space: pre;
-  -webkit-overflow-scrolling: touch;
   overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
   max-width: 100%;
   min-width: 100px;
   border-radius: 1rem;
@@ -37,4 +44,3 @@ code.hljs {
   line-height: var(--lh-base);
   padding: calc(var(--lh-base) * 1.5rem);
 }
-
