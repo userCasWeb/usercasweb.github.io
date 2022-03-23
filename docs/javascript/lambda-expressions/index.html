@@ -113,6 +113,13 @@ snd(pair(<span class="hljs-string">"first"</span>)(<span class="hljs-string">"se
 firstn(person(<span class="hljs-string">"John"</span>)(<span class="hljs-string">"Smith"</span>)(<span class="hljs-number">54</span>)); <span class="hljs-comment">// -&gt; John</span>
 lastn(person(<span class="hljs-string">"John"</span>)(<span class="hljs-string">"Smith"</span>)(<span class="hljs-number">54</span>)); <span class="hljs-comment">// -&gt; Smith</span>
 age(person(<span class="hljs-string">"John"</span>)(<span class="hljs-string">"Smith"</span>)(<span class="hljs-number">54</span>)); <span class="hljs-comment">// -&gt; 54</span></code></pre>
+
+<p>Wir können auch mit einer <code>const</code> arbeiten.</p>
+<pre><code class="hljs js"><span class="hljs-keyword">const</span> admin = person(<span class="hljs-string">"John"</span>)(<span class="hljs-string">"Smith"</span>)(<span class="hljs-number">54</span>);
+
+firstn(admin); <span class="hljs-comment">// -&gt; John</span>
+lastn(admin); <span class="hljs-comment">// -&gt; Smith</span>
+age(admin); <span class="hljs-comment">// -&gt; 54</span></code></pre>
   </main>
     <script>
         const list = document.getElementsByClassName('menu-btn');

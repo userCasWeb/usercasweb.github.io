@@ -134,3 +134,13 @@ firstn(person("John")("Smith")(54)); // -> John
 lastn(person("John")("Smith")(54)); // -> Smith
 age(person("John")("Smith")(54)); // -> 54
 ```
+
+Wir können auch mit einer `const` arbeiten.
+
+```js
+const admin = person("John")("Smith")(54);
+
+firstn(admin); // -> John
+lastn(admin); // -> Smith
+age(admin); // -> 54
+```
